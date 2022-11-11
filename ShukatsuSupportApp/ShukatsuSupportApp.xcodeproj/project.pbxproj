@@ -20,7 +20,9 @@
 		CB22626D290C2167003B1F1C /* TOPViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB22626C290C2167003B1F1C /* TOPViewController.swift */; };
 		CB226270290E9256003B1F1C /* Charts in Frameworks */ = {isa = PBXBuildFile; productRef = CB22626F290E9256003B1F1C /* Charts */; };
 		CBAD24DC29182F7800C2DC80 /* NazeNazeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBAD24DB29182F7800C2DC80 /* NazeNazeViewController.swift */; };
+		CBB682CE291DEC8A001A1C05 /* EpisodeDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBB682CD291DEC8A001A1C05 /* EpisodeDetailViewController.swift */; };
 		CBBDA7232918D507006EC35C /* ESwritingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBBDA7222918D507006EC35C /* ESwritingViewController.swift */; };
+		CBBDE4C0291CD7EF003E2650 /* AddEpisodeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBBDE4BF291CD7EF003E2650 /* AddEpisodeViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,7 +59,9 @@
 		CB22625F290C1CB4003B1F1C /* ShukatsuSupportAppUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShukatsuSupportAppUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		CB22626C290C2167003B1F1C /* TOPViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TOPViewController.swift; sourceTree = "<group>"; };
 		CBAD24DB29182F7800C2DC80 /* NazeNazeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NazeNazeViewController.swift; sourceTree = "<group>"; };
+		CBB682CD291DEC8A001A1C05 /* EpisodeDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodeDetailViewController.swift; sourceTree = "<group>"; };
 		CBBDA7222918D507006EC35C /* ESwritingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ESwritingViewController.swift; sourceTree = "<group>"; };
+		CBBDE4BF291CD7EF003E2650 /* AddEpisodeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddEpisodeViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -114,6 +118,8 @@
 				CB22623E290C1CAE003B1F1C /* SceneDelegate.swift */,
 				CB226240290C1CAE003B1F1C /* ViewController.swift */,
 				CB226242290C1CAE003B1F1C /* Main.storyboard */,
+				CBB682CD291DEC8A001A1C05 /* EpisodeDetailViewController.swift */,
+				CBBDE4BF291CD7EF003E2650 /* AddEpisodeViewController.swift */,
 				CBBDA7222918D507006EC35C /* ESwritingViewController.swift */,
 				CBAD24DB29182F7800C2DC80 /* NazeNazeViewController.swift */,
 				CB22626C290C2167003B1F1C /* TOPViewController.swift */,
@@ -280,7 +286,9 @@
 			files = (
 				CB22626D290C2167003B1F1C /* TOPViewController.swift in Sources */,
 				CB16421D290E99EF0073FBE5 /* GraphViewController.swift in Sources */,
+				CBBDE4C0291CD7EF003E2650 /* AddEpisodeViewController.swift in Sources */,
 				CB226241290C1CAE003B1F1C /* ViewController.swift in Sources */,
+				CBB682CE291DEC8A001A1C05 /* EpisodeDetailViewController.swift in Sources */,
 				CBBDA7232918D507006EC35C /* ESwritingViewController.swift in Sources */,
 				CB22623D290C1CAE003B1F1C /* AppDelegate.swift in Sources */,
 				CBAD24DC29182F7800C2DC80 /* NazeNazeViewController.swift in Sources */,
