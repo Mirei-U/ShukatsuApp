@@ -269,13 +269,13 @@
         <!--エピソード閲覧-->
         <scene sceneID="2X7-qG-nVT">
             <objects>
-                <viewController storyboardIdentifier="EpisodeView" id="Wah-Ed-WPr" customClass="EpisodeDetailViewController" customModule="ShukatsuSupportApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="EpisodeView" id="Wah-Ed-WPr" customClass="PreviewEpisode" customModule="ShukatsuSupportApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="6GC-ec-bfK">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="1980"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="2000"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="l2I-sL-PL3">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="1980"/>
+                                <rect key="frame" x="0.0" y="44" width="375" height="1956"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RsK-6t-QsL">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="2000"/>
@@ -646,16 +646,16 @@
             </objects>
             <point key="canvasLocation" x="28" y="50.824587706146929"/>
         </scene>
-        <!--Title-->
+        <!--EpisodeEdit-->
         <scene sceneID="H2b-uz-Rro">
             <objects>
-                <viewController storyboardIdentifier="EpisodeEdit" id="Cdl-g1-6xE" customClass="AddEpisodeViewController" customModule="ShukatsuSupportApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="EpisodeEdit" title="EpisodeEdit" id="Cdl-g1-6xE" customClass="EditEpisode" customModule="ShukatsuSupportApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="I7P-St-M2x">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="1980"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="2000"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rXs-JT-Fio">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="1980"/>
+                                <rect key="frame" x="0.0" y="44" width="375" height="1956"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qWv-OM-WSg">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="2000"/>
@@ -1006,7 +1006,7 @@
                     <navigationItem key="navigationItem" title="Title" id="zdK-Ie-VFQ">
                         <barButtonItem key="rightBarButtonItem" title="保存" id="XCM-su-D0g">
                             <connections>
-                                <segue destination="Wah-Ed-WPr" kind="show" id="pa5-z1-nf2"/>
+                                <action selector="保存ボタン:" destination="Cdl-g1-6xE" id="jfx-y8-YFz"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -1024,12 +1024,9 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cFS-zG-Gad" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3999" y="-300"/>
+            <point key="canvasLocation" x="3997.5999999999999" y="-300.44977511244377"/>
         </scene>
     </scenes>
-    <inferredMetricsTieBreakers>
-        <segue reference="pa5-z1-nf2"/>
-    </inferredMetricsTieBreakers>
     <resources>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

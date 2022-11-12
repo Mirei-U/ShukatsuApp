@@ -16,14 +16,17 @@ class GraphViewController: UIViewController,UITableViewDelegate,UITableViewDataS
     var chartDataSet: LineChartDataSet!
     // 今回使用するサンプルデータ
     let sampleData = [3.0,3.0,3.0,4.0,4.0,5.0,5.0,5.0,2.0]
-    //cellに表示する内容(仮)
-    let episodes = ["test","test2","test3"]
+    
+    
 
+    //cellに表示する内容(仮)
+//    let edit = EditEpisode()
+//
+    let episodes = ["aa"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
         
         // グラフを表示する
                 displayChart(data: sampleData)
