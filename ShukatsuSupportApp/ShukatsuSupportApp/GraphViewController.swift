@@ -20,16 +20,27 @@ class GraphViewController: UIViewController,UITableViewDelegate,UITableViewDataS
     
 
     //cellに表示する内容(仮)
-//    let edit = EditEpisode()
+    let edit = EditEpisode()
 //
-    let episodes = ["aa"]
+    
+    
+    @IBOutlet weak var Episode: UITableView!
+    
+//    @IBOutlet weak var EpisodeCell: UITableViewCell!
+    
+    var episodes = EditEpisode().EpisodeArray
+//    var episodes : [EditEpisode] = []
+//    var episodecell : EditEpisode!
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        Episode.dataSource = self
+        Episode.delegate = self
+        loadData()
         
         // グラフを表示する
-                displayChart(data: sampleData)
+        displayChart(data: sampleData)
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -41,6 +52,17 @@ class GraphViewController: UIViewController,UITableViewDelegate,UITableViewDataS
         cell.textLabel!.text=episodes[indexPath.row]
         return cell
     }
+    
+    func loadData() {
+        episodes.append("ふくろう")
+        episodes.append("とり")
+        episodes.append("らいおん")
+        episodes.append("かば")
+        episodes.append("くま")
+        episodes.append("はりねずみ")
+        episodes.append("ぞう")
+        }
+                        
     func displayChart(data: [Double]) {
             // グラフの範囲を指定する
         chartView = LineChartView(frame: CGRect(x: 0, y: 100, width: view.frame.width, height: 230))

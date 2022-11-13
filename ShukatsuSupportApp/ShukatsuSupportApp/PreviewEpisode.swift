@@ -8,10 +8,12 @@
 import UIKit
 
 class PreviewEpisode: UIViewController {
+
     
     
-    let edit = EditEpisode()
     
+    //let edit = EditEpisode()
+   
     @IBOutlet weak var タイトル : UITextField!
     @IBOutlet weak var 具体的に何をした: UITextView!
     @IBOutlet weak var 目標と困難: UITextView!
@@ -45,9 +47,8 @@ class PreviewEpisode: UIViewController {
         活かせた長所.text  = 保存済み長所
         改善点.text  = 保存済み改善点
         学んだこと.text  = 保存済み学んだこと
+        
+        
     }
-    
-
-
 
 }

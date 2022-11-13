@@ -212,14 +212,17 @@
                                 <rect key="frame" x="0.0" y="338" width="375" height="329"/>
                                 <color key="backgroundColor" systemColor="opaqueSeparatorColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="EpisodeCell" id="ucQ-bC-Dt1">
-                                        <rect key="frame" x="0.0" y="44.5" width="375" height="43.5"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="EpisodeCell" rowHeight="70" id="ucQ-bC-Dt1">
+                                        <rect key="frame" x="0.0" y="44.5" width="375" height="70"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="ucQ-bC-Dt1" id="NGn-8Y-gnx">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="70"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" red="0.98653739689999997" green="0.92663198710000005" blue="0.83135610820000005" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <connections>
+                                            <segue destination="Wah-Ed-WPr" kind="show" identifier="CellEpisode" id="TEB-4M-HtW"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                                 <connections>
@@ -241,7 +244,7 @@
                                     <color key="titleColor" systemColor="secondarySystemBackgroundColor"/>
                                 </state>
                                 <connections>
-                                    <segue destination="Wah-Ed-WPr" kind="show" id="KG2-Lx-00w"/>
+                                    <segue destination="Wah-Ed-WPr" kind="show" identifier="NewEpisode" id="cba-TD-3DY"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -261,15 +264,18 @@
                             <constraint firstItem="Imq-03-zq9" firstAttribute="top" secondItem="RWR-Db-tpV" secondAttribute="top" constant="253" id="shh-Cz-Q0P"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="Episode" destination="UuH-f7-5ax" id="hIG-wK-h2J"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ccp-hg-sD6" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1868" y="-300"/>
         </scene>
-        <!--エピソード閲覧-->
+        <!--PreviewEpisode-->
         <scene sceneID="2X7-qG-nVT">
             <objects>
-                <viewController storyboardIdentifier="EpisodeView" id="Wah-Ed-WPr" customClass="PreviewEpisode" customModule="ShukatsuSupportApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="EpisodeView" title="PreviewEpisode" id="Wah-Ed-WPr" customClass="PreviewEpisode" customModule="ShukatsuSupportApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="6GC-ec-bfK">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="2000"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1027,6 +1033,9 @@
             <point key="canvasLocation" x="3997.5999999999999" y="-300.44977511244377"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="TEB-4M-HtW"/>
+    </inferredMetricsTieBreakers>
     <resources>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

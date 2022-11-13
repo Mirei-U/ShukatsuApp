@@ -9,7 +9,6 @@ import UIKit
 
 class EditEpisode: UIViewController{
     
-    
     @IBOutlet weak var タイトル : UITextField!
     @IBOutlet weak var 具体的に何をした: UITextView!
     @IBOutlet weak var 目標と困難: UITextView!
@@ -19,6 +18,7 @@ class EditEpisode: UIViewController{
     @IBOutlet weak var 改善点: UITextView!
     @IBOutlet weak var 学んだこと: UITextView!
 
+    public var EpisodeArray : [String] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
