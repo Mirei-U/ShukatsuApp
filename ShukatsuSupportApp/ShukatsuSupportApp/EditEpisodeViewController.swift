@@ -7,6 +7,18 @@
 
 import UIKit
 
+
+struct EpisodeDetail{
+    var タイトル: String
+    var 具体的に何をした: String
+    var 目標と困難: String
+    var 工夫した点: String
+    var 取り組んだ結果: String
+    var 活かせた長所: String
+    var 改善点: String
+    var 学んだこと: String
+}
+
 class EditEpisode: UIViewController{
     
     @IBOutlet weak var タイトル : UITextField!
@@ -18,9 +30,8 @@ class EditEpisode: UIViewController{
     @IBOutlet weak var 改善点: UITextView!
     @IBOutlet weak var 学んだこと: UITextView!
 
-   
-    
-    public var EpisodeArray : [String] = []
+//    public var EpisodeArray : [String] = []
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -42,6 +53,8 @@ class EditEpisode: UIViewController{
         活かせた長所.text  = 保存済み長所
         改善点.text  = 保存済み改善点
         学んだこと.text  = 保存済み学んだこと
+        
+        
     }
     
     //userdefaultインスタンス
@@ -58,6 +71,8 @@ class EditEpisode: UIViewController{
         UserDefaults.standard.set(改善点.text!, forKey: "改善点キー")
         UserDefaults.standard.set(学んだこと.text!, forKey: "学んだことキー")
         
+        
+//        EpisodeArray = [EpisodeDetail(タイトル: タイトル.text!, 具体的に何をした: 具体的に何をした.text!, 目標と困難: 目標と困難.text!, 工夫した点: 工夫した点.text!, 取り組んだ結果: 取り組んだ結果.text!, 活かせた長所: 活かせた長所.text!, 改善点: 改善点.text!, 学んだこと: 学んだこと.text!)]
         self.navigationController?.popViewController(animated: true)
         
     }

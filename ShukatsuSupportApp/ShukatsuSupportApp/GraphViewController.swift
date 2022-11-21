@@ -8,24 +8,42 @@
 import UIKit
 import Charts
 
+
+struct EpisodeInfo{
+    var タイトル: String
+    var 具体的に何をした: String
+    var 目標と困難: String
+    var 工夫した点: String
+    var 取り組んだ結果: String
+    var 活かせた長所: String
+    var 改善点: String
+    var 学んだこと: String
+}
 class GraphViewController: UIViewController,UITableViewDelegate,UITableViewDataSource {
 
+    @IBOutlet var EpisodeTableView: UITableView!
     
     
     var chartView: LineChartView!
     var chartDataSet: LineChartDataSet!
+   
     // 今回使用するサンプルデータ
     let sampleData = [3.0,3.0,3.0,4.0,4.0,5.0,5.0,5.0,2.0]
     
     
 
     //cellに表示する内容(仮)
-    let edit = EditEpisode()
+    //editepisode継承
+//    let edit = EditEpisode()
+    let edit = EpisodeDetailViewController()
 //
     
     
     @IBOutlet weak var Episode: UITableView!
     
+//    let Episodes = [
+//        EpisodeInfo(タイトル: edit.タイトル.text!, 具体的に何をした: edit.具体的に何をした.text!, 目標と困難: edit.目標と困難.text!, 工夫した点: edit.工夫した点.text!, 取り組んだ結果: edit.取り組んだ結果.text!, 活かせた長所: edit.活かせた長所.text!, 改善点: edit.改善点.text!, 学んだこと: edit.学んだこと.text!)
+//    ]
 //    @IBOutlet weak var EpisodeCell: UITableViewCell!
     
     var episodes = EditEpisode().EpisodeArray
@@ -37,31 +55,28 @@ class GraphViewController: UIViewController,UITableViewDelegate,UITableViewDataS
 
         Episode.dataSource = self
         Episode.delegate = self
-        loadData()
+//        loadData()
         
         // グラフを表示する
         displayChart(data: sampleData)
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return episodes.count
+        
+        //データがあるだけセルを作る
+        let userData = edit.realm.objects(User.self)
+        return userData.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "EpisodeCell",for: indexPath)
-        cell.textLabel!.text=episodes[indexPath.row]
+
+        let cell: UITableViewCell = tableView.dequeueReusableCell(withIdentifier: "EpisodeCell", for: indexPath)
+        let userData = edit.realm.objects(User.self)
+        cell.textLabel!.text = "[タイトル：\(userData[indexPath.row].userタイトル)]"
         return cell
     }
     
-    func loadData() {
-        episodes.append("ふくろう")
-        episodes.append("とり")
-        episodes.append("らいおん")
-        episodes.append("かば")
-        episodes.append("くま")
-        episodes.append("はりねずみ")
-        episodes.append("ぞう")
-        }
+
                         
     func displayChart(data: [Double]) {
             // グラフの範囲を指定する
@@ -104,4 +119,5 @@ class GraphViewController: UIViewController,UITableViewDelegate,UITableViewDataS
             
             view.addSubview(chartView)
         }
+    
 }

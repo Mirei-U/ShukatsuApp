@@ -31,7 +31,7 @@
                                 </buttonConfiguration>
                                 <connections>
                                     <action selector="Button:" destination="Xmv-tJ-vuT" eventType="touchUpInside" id="B9l-2u-76l"/>
-                                    <segue destination="REk-He-GPB" kind="show" id="0FJ-IA-gqt"/>
+                                    <segue destination="REk-He-GPB" kind="show" id="5eX-L2-Ayp"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JgR-oY-SkE">
@@ -221,7 +221,7 @@
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" red="0.98653739689999997" green="0.92663198710000005" blue="0.83135610820000005" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <connections>
-                                            <segue destination="Wah-Ed-WPr" kind="show" identifier="CellEpisode" id="TEB-4M-HtW"/>
+                                            <segue destination="Wah-Ed-WPr" kind="show" id="CPR-hi-FvA"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -244,7 +244,7 @@
                                     <color key="titleColor" systemColor="secondarySystemBackgroundColor"/>
                                 </state>
                                 <connections>
-                                    <segue destination="Wah-Ed-WPr" kind="show" identifier="NewEpisode" id="cba-TD-3DY"/>
+                                    <segue destination="Wah-Ed-WPr" kind="show" id="DW2-kq-Vic"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -264,8 +264,10 @@
                             <constraint firstItem="Imq-03-zq9" firstAttribute="top" secondItem="RWR-Db-tpV" secondAttribute="top" constant="253" id="shh-Cz-Q0P"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="U1D-th-zAs"/>
                     <connections>
                         <outlet property="Episode" destination="UuH-f7-5ax" id="hIG-wK-h2J"/>
+                        <outlet property="EpisodeTableView" destination="UuH-f7-5ax" id="R16-ev-djI"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ccp-hg-sD6" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -487,6 +489,9 @@
                                                         <color key="backgroundColor" red="0.94653230909999997" green="0.84082561730000005" blue="0.70193451640000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                         <textInputTraits key="textInputTraits"/>
+                                                        <connections>
+                                                            <action selector="title:" destination="Cmd-yQ-2W5" eventType="editingDidEnd" id="GV5-w4-rQ8"/>
+                                                        </connections>
                                                     </textField>
                                                 </subviews>
                                                 <constraints>
@@ -627,6 +632,7 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uxq-Qs-Yw6" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="Cmd-yQ-2W5" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="2800.8000000000002" y="-300.44977511244377"/>
         </scene>
@@ -655,7 +661,7 @@
         <!--EpisodeEdit-->
         <scene sceneID="H2b-uz-Rro">
             <objects>
-                <viewController storyboardIdentifier="EpisodeEdit" title="EpisodeEdit" id="Cdl-g1-6xE" customClass="EditEpisode" customModule="ShukatsuSupportApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="EpisodeEdit" title="EpisodeEdit" id="Cdl-g1-6xE" customClass="EpisodeDetailViewController" customModule="ShukatsuSupportApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="I7P-St-M2x">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="2000"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -681,7 +687,6 @@
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="128" id="uEd-GN-GNL"/>
                                                         </constraints>
-                                                        <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                                                         <color key="textColor" systemColor="labelColor"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -711,7 +716,6 @@
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="128" id="Sg4-99-teu"/>
                                                         </constraints>
-                                                        <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                                                         <color key="textColor" systemColor="labelColor"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -741,7 +745,6 @@
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="128" id="Y5x-h0-ofj"/>
                                                         </constraints>
-                                                        <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                                                         <color key="textColor" systemColor="labelColor"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -771,7 +774,6 @@
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="128" id="yL2-Mz-LSP"/>
                                                         </constraints>
-                                                        <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                                                         <color key="textColor" systemColor="labelColor"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -801,7 +803,6 @@
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="128" id="S2P-Dv-rTJ"/>
                                                         </constraints>
-                                                        <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                                                         <color key="textColor" systemColor="labelColor"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -831,7 +832,6 @@
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="128" id="b5J-hh-xAM"/>
                                                         </constraints>
-                                                        <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                                                         <color key="textColor" systemColor="labelColor"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -858,7 +858,6 @@
                                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="BIk-PG-dn0">
                                                         <rect key="frame" x="0.0" y="32" width="345" height="128"/>
                                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                                        <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                                                         <color key="textColor" systemColor="labelColor"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -1012,7 +1011,7 @@
                     <navigationItem key="navigationItem" title="Title" id="zdK-Ie-VFQ">
                         <barButtonItem key="rightBarButtonItem" title="保存" id="XCM-su-D0g">
                             <connections>
-                                <action selector="保存ボタン:" destination="Cdl-g1-6xE" id="jfx-y8-YFz"/>
+                                <action selector="保存:" destination="Cdl-g1-6xE" id="bUT-QY-x2S"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -1034,7 +1033,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="TEB-4M-HtW"/>
+        <segue reference="CPR-hi-FvA"/>
     </inferredMetricsTieBreakers>
     <resources>
         <systemColor name="labelColor">

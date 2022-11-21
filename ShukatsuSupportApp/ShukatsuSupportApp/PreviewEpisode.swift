@@ -9,6 +9,7 @@ import UIKit
 
 class PreviewEpisode: UIViewController {
 
+    var Episode: EpisodeInfo!
     
     
     
