@@ -41,14 +41,9 @@ class GraphViewController: UIViewController,UITableViewDelegate,UITableViewDataS
     
     @IBOutlet weak var Episode: UITableView!
     
-//    let Episodes = [
-//        EpisodeInfo(タイトル: edit.タイトル.text!, 具体的に何をした: edit.具体的に何をした.text!, 目標と困難: edit.目標と困難.text!, 工夫した点: edit.工夫した点.text!, 取り組んだ結果: edit.取り組んだ結果.text!, 活かせた長所: edit.活かせた長所.text!, 改善点: edit.改善点.text!, 学んだこと: edit.学んだこと.text!)
-//    ]
-//    @IBOutlet weak var EpisodeCell: UITableViewCell!
-    
+
     var episodes = EditEpisode().EpisodeArray
-//    var episodes : [EditEpisode] = []
-//    var episodecell : EditEpisode!
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -61,6 +56,11 @@ class GraphViewController: UIViewController,UITableViewDelegate,UITableViewDataS
         displayChart(data: sampleData)
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+      super.viewWillAppear(animated)
+      //テーブルを再描画
+        Episode.reloadData()
+    }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
         //データがあるだけセルを作る

@@ -634,7 +634,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uxq-Qs-Yw6" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <exit id="Cmd-yQ-2W5" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="2800.8000000000002" y="-300.44977511244377"/>
+            <point key="canvasLocation" x="2927" y="50"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="b54-3F-djc">
@@ -1033,7 +1033,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="CPR-hi-FvA"/>
+        <segue reference="DW2-kq-Vic"/>
     </inferredMetricsTieBreakers>
     <resources>
         <systemColor name="labelColor">

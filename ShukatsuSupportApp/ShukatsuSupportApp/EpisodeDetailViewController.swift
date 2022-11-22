@@ -33,6 +33,9 @@ class EpisodeDetailViewController: UIViewController{
     }
     
     @IBAction func 保存(_ sender: Any) {
+        //グラフ画面に戻る
+        self.navigationController?.popToViewController(navigationController!.viewControllers[1], animated: true)
+        print("⏪戻る")
         let user = User()
         user.userタイトル = タイトル.text!
         user.user具体的に何をした = 具体的に何をした.text!
@@ -45,18 +48,20 @@ class EpisodeDetailViewController: UIViewController{
         try! realm.write {
             realm.add(user)
         }
+
         //書いた後リセット
-        タイトル.text = ""
-        具体的に何をした.text = ""
-        目標と困難.text = ""
-        工夫した点.text = ""
-        取り組んだ結果.text = ""
-        活かせた長所.text = ""
-        改善点.text = ""
-        学んだこと.text = ""
+//        タイトル.text = ""
+//        具体的に何をした.text = ""
+//        目標と困難.text = ""
+//        工夫した点.text = ""
+//        取り組んだ結果.text = ""
+//        活かせた長所.text = ""
+//        改善点.text = ""
+//        学んだこと.text = ""
         
         //テーブルをリセット
 //        tableView.reloadData()
+        
     }
     
 
