@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		CB16421D290E99EF0073FBE5 /* GraphViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB16421C290E99EF0073FBE5 /* GraphViewController.swift */; };
+		B71587471DCBD28B1A9DD0B4 /* Pods_ShukatsuSupportApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EE595CE41639B4D0280B9A20 /* Pods_ShukatsuSupportApp.framework */; };
 		CB22623D290C1CAE003B1F1C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB22623C290C1CAE003B1F1C /* AppDelegate.swift */; };
 		CB22623F290C1CAE003B1F1C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB22623E290C1CAE003B1F1C /* SceneDelegate.swift */; };
 		CB226241290C1CAE003B1F1C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB226240290C1CAE003B1F1C /* ViewController.swift */; };
@@ -20,9 +20,12 @@
 		CB22626D290C2167003B1F1C /* TOPViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB22626C290C2167003B1F1C /* TOPViewController.swift */; };
 		CB226270290E9256003B1F1C /* Charts in Frameworks */ = {isa = PBXBuildFile; productRef = CB22626F290E9256003B1F1C /* Charts */; };
 		CBAD24DC29182F7800C2DC80 /* NazeNazeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBAD24DB29182F7800C2DC80 /* NazeNazeViewController.swift */; };
+		CBAF3BE92933E08800B7A1DE /* GraphViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBAF3BE82933E08800B7A1DE /* GraphViewController.swift */; };
+		CBAF3BED2933E1A700B7A1DE /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBAF3BEC2933E1A700B7A1DE /* User.swift */; };
+		CBAF3BEF2933E1F900B7A1DE /* PreviewEpisode.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBAF3BEE2933E1F900B7A1DE /* PreviewEpisode.swift */; };
+		CBAF3BF12933E23900B7A1DE /* EditEpisode.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBAF3BF02933E23900B7A1DE /* EditEpisode.swift */; };
 		CBB682CE291DEC8A001A1C05 /* EpisodeDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBB682CD291DEC8A001A1C05 /* EpisodeDetailViewController.swift */; };
 		CBBDA7232918D507006EC35C /* ESwritingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBBDA7222918D507006EC35C /* ESwritingViewController.swift */; };
-		CBBDE4C0291CD7EF003E2650 /* AddEpisodeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBBDE4BF291CD7EF003E2650 /* AddEpisodeViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -43,7 +46,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		CB16421C290E99EF0073FBE5 /* GraphViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraphViewController.swift; sourceTree = "<group>"; };
+		620EFB388184CE82141E494A /* Pods-ShukatsuSupportApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ShukatsuSupportApp.debug.xcconfig"; path = "Target Support Files/Pods-ShukatsuSupportApp/Pods-ShukatsuSupportApp.debug.xcconfig"; sourceTree = "<group>"; };
+		AA434E51F90DF281F9A32D17 /* Pods-ShukatsuSupportApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ShukatsuSupportApp.release.xcconfig"; path = "Target Support Files/Pods-ShukatsuSupportApp/Pods-ShukatsuSupportApp.release.xcconfig"; sourceTree = "<group>"; };
 		CB226239290C1CAE003B1F1C /* ShukatsuSupportApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ShukatsuSupportApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CB22623C290C1CAE003B1F1C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CB22623E290C1CAE003B1F1C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -59,9 +63,13 @@
 		CB22625F290C1CB4003B1F1C /* ShukatsuSupportAppUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShukatsuSupportAppUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		CB22626C290C2167003B1F1C /* TOPViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TOPViewController.swift; sourceTree = "<group>"; };
 		CBAD24DB29182F7800C2DC80 /* NazeNazeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NazeNazeViewController.swift; sourceTree = "<group>"; };
+		CBAF3BE82933E08800B7A1DE /* GraphViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraphViewController.swift; sourceTree = "<group>"; };
+		CBAF3BEC2933E1A700B7A1DE /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		CBAF3BEE2933E1F900B7A1DE /* PreviewEpisode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewEpisode.swift; sourceTree = "<group>"; };
+		CBAF3BF02933E23900B7A1DE /* EditEpisode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditEpisode.swift; sourceTree = "<group>"; };
 		CBB682CD291DEC8A001A1C05 /* EpisodeDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodeDetailViewController.swift; sourceTree = "<group>"; };
 		CBBDA7222918D507006EC35C /* ESwritingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ESwritingViewController.swift; sourceTree = "<group>"; };
-		CBBDE4BF291CD7EF003E2650 /* AddEpisodeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddEpisodeViewController.swift; sourceTree = "<group>"; };
+		EE595CE41639B4D0280B9A20 /* Pods_ShukatsuSupportApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ShukatsuSupportApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,6 +78,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CB226270290E9256003B1F1C /* Charts in Frameworks */,
+				B71587471DCBD28B1A9DD0B4 /* Pods_ShukatsuSupportApp.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -90,14 +99,32 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0160BECA2C0F3EF96519DC6D /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				EE595CE41639B4D0280B9A20 /* Pods_ShukatsuSupportApp.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		AB1BC213B9241B499F748696 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				620EFB388184CE82141E494A /* Pods-ShukatsuSupportApp.debug.xcconfig */,
+				AA434E51F90DF281F9A32D17 /* Pods-ShukatsuSupportApp.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		CB226230290C1CAE003B1F1C = {
 			isa = PBXGroup;
 			children = (
-				CB16421C290E99EF0073FBE5 /* GraphViewController.swift */,
 				CB22623B290C1CAE003B1F1C /* ShukatsuSupportApp */,
 				CB226252290C1CB4003B1F1C /* ShukatsuSupportAppTests */,
 				CB22625C290C1CB4003B1F1C /* ShukatsuSupportAppUITests */,
 				CB22623A290C1CAE003B1F1C /* Products */,
+				AB1BC213B9241B499F748696 /* Pods */,
+				0160BECA2C0F3EF96519DC6D /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -114,15 +141,18 @@
 		CB22623B290C1CAE003B1F1C /* ShukatsuSupportApp */ = {
 			isa = PBXGroup;
 			children = (
+				CBAF3BEC2933E1A700B7A1DE /* User.swift */,
+				CBAD24DB29182F7800C2DC80 /* NazeNazeViewController.swift */,
+				CBAF3BE82933E08800B7A1DE /* GraphViewController.swift */,
 				CB22623C290C1CAE003B1F1C /* AppDelegate.swift */,
 				CB22623E290C1CAE003B1F1C /* SceneDelegate.swift */,
 				CB226240290C1CAE003B1F1C /* ViewController.swift */,
 				CB226242290C1CAE003B1F1C /* Main.storyboard */,
+				CBAF3BEE2933E1F900B7A1DE /* PreviewEpisode.swift */,
+				CBAF3BF02933E23900B7A1DE /* EditEpisode.swift */,
 				CBB682CD291DEC8A001A1C05 /* EpisodeDetailViewController.swift */,
-				CBBDE4BF291CD7EF003E2650 /* AddEpisodeViewController.swift */,
-				CBBDA7222918D507006EC35C /* ESwritingViewController.swift */,
-				CBAD24DB29182F7800C2DC80 /* NazeNazeViewController.swift */,
 				CB22626C290C2167003B1F1C /* TOPViewController.swift */,
+				CBBDA7222918D507006EC35C /* ESwritingViewController.swift */,
 				CB226245290C1CB4003B1F1C /* Assets.xcassets */,
 				CB226247290C1CB4003B1F1C /* LaunchScreen.storyboard */,
 				CB22624A290C1CB4003B1F1C /* Info.plist */,
@@ -154,9 +184,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = CB226263290C1CB4003B1F1C /* Build configuration list for PBXNativeTarget "ShukatsuSupportApp" */;
 			buildPhases = (
+				5AAD38EDBFD6A611E365BFB8 /* [CP] Check Pods Manifest.lock */,
 				CB226235290C1CAE003B1F1C /* Sources */,
 				CB226236290C1CAE003B1F1C /* Frameworks */,
 				CB226237290C1CAE003B1F1C /* Resources */,
+				A984D41ECD35BA68474CC69D /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -279,20 +311,64 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		5AAD38EDBFD6A611E365BFB8 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-ShukatsuSupportApp-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A984D41ECD35BA68474CC69D /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-ShukatsuSupportApp/Pods-ShukatsuSupportApp-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-ShukatsuSupportApp/Pods-ShukatsuSupportApp-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-ShukatsuSupportApp/Pods-ShukatsuSupportApp-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		CB226235290C1CAE003B1F1C /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CBAF3BE92933E08800B7A1DE /* GraphViewController.swift in Sources */,
 				CB22626D290C2167003B1F1C /* TOPViewController.swift in Sources */,
-				CB16421D290E99EF0073FBE5 /* GraphViewController.swift in Sources */,
-				CBBDE4C0291CD7EF003E2650 /* AddEpisodeViewController.swift in Sources */,
+				CBAF3BEF2933E1F900B7A1DE /* PreviewEpisode.swift in Sources */,
+				CBAF3BF12933E23900B7A1DE /* EditEpisode.swift in Sources */,
 				CB226241290C1CAE003B1F1C /* ViewController.swift in Sources */,
 				CBB682CE291DEC8A001A1C05 /* EpisodeDetailViewController.swift in Sources */,
 				CBBDA7232918D507006EC35C /* ESwritingViewController.swift in Sources */,
 				CB22623D290C1CAE003B1F1C /* AppDelegate.swift in Sources */,
 				CBAD24DC29182F7800C2DC80 /* NazeNazeViewController.swift in Sources */,
 				CB22623F290C1CAE003B1F1C /* SceneDelegate.swift in Sources */,
+				CBAF3BED2933E1A700B7A1DE /* User.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -464,6 +540,7 @@
 		};
 		CB226264290C1CB4003B1F1C /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 620EFB388184CE82141E494A /* Pods-ShukatsuSupportApp.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -480,6 +557,10 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"${PODS_XCFRAMEWORKS_BUILD_DIR}/realm-monorepo\"",
+				);
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = uchidamirei.com.ShukatsuSupportApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -491,6 +572,7 @@
 		};
 		CB226265290C1CB4003B1F1C /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = AA434E51F90DF281F9A32D17 /* Pods-ShukatsuSupportApp.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -506,6 +588,10 @@
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
+				);
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"${PODS_XCFRAMEWORKS_BUILD_DIR}/realm-monorepo\"",
 				);
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = uchidamirei.com.ShukatsuSupportApp;

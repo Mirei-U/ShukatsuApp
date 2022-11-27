@@ -30,6 +30,7 @@ class EpisodeDetailViewController: UIViewController{
         //データをコンソールに表示
         let userData = realm.objects(User.self)
         print("🟥全てのデータ\(userData)")
+//        print(Realm.Configuration.defaultConfiguration.fileURL!)
     }
     
     @IBAction func 保存(_ sender: Any) {
