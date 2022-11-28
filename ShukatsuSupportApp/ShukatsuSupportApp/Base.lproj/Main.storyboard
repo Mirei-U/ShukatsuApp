@@ -189,6 +189,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="mo3-ff-Bhu"/>
                     <connections>
+                        <outlet property="EpisodeTableView" destination="M8Z-mL-nI9" id="hQl-GF-eED"/>
                         <outlet property="NazeNazeLabel" destination="DFm-rq-Ean" id="ipg-Wh-Wev"/>
                     </connections>
                 </viewController>
