@@ -26,7 +26,7 @@ class EpisodeDetailViewController: UIViewController{
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        タイトル.placeholder = "タイトルを入力してください"
+//        タイトル.placeholder = "タイトルを入力してください"
         //データをコンソールに表示
         let userData = realm.objects(User.self)
         print("🟥全てのデータ\(userData)")

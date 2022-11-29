@@ -7,25 +7,32 @@
 
 import UIKit
 
-class ESwritingViewController: UIViewController {
+class ESwritingViewController: UIViewController,UITableViewDelegate,UITableViewDataSource {
 
+    let edit = EpisodeDetailViewController()
+    @IBOutlet var EpisodeTableView: UITableView!
     @IBOutlet weak var ESLabel: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
         ESLabel.text = "エピソードを下の一覧から選択しよう。\n赤く表示されている部分がおすすめ！"
+        EpisodeTableView.dataSource = self
+        EpisodeTableView.delegate = self
+    }
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        let userData = edit.realm.objects(User.self)
+        return userData.count
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        //セル取得
+        let cell: UITableViewCell = tableView.dequeueReusableCell(withIdentifier: "EpisodeCell", for: indexPath)
+        let userData = edit.realm.objects(User.self)
+        //セル表示内容設定
+        cell.textLabel!.text = "[タイトル：\(userData[indexPath.row].userタイトル)]"
+        return cell
     }
-    */
-
+    
 }
