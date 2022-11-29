@@ -32,8 +32,12 @@ class EpisodeDetailViewController: UIViewController{
         print("🟥全てのデータ\(userData)")
 //        print(Realm.Configuration.defaultConfiguration.fileURL!)
     }
-    
+
     @IBAction func 保存(_ sender: Any) {
+        
+        if(タイトル.text! == ""){
+            showAlert()
+        }else{
         //グラフ画面に戻る
         self.navigationController?.popToViewController(navigationController!.viewControllers[1], animated: true)
         print("⏪戻る")
@@ -46,9 +50,18 @@ class EpisodeDetailViewController: UIViewController{
         user.user活かせた長所 = 活かせた長所.text!
         user.user改善点 = 改善点.text!
         user.user学んだこと = 学んだこと.text!
+            
         try! realm.write {
             realm.add(user)
         }
+    }
+       
+    func showAlert() {
+            let alertController = UIAlertController(title: "保存できません", message: "タイトルを入力してください", preferredStyle: .alert)
+            alertController.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+            present(alertController, animated: true, completion: nil)
+    }
+
 
         //書いた後リセット
 //        タイトル.text = ""
