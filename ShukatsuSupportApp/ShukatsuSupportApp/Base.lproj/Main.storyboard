@@ -5,7 +5,6 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
-        <capability name="UIMenu" message="Requires Xcode 11 or later." minToolsVersion="11.0" requiredIntegratedClassName="UICommandDiff"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -598,19 +597,6 @@
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" showsMenuAsPrimaryAction="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rex-6w-jRo">
-                                                        <rect key="frame" x="274" y="16" width="46" height="30"/>
-                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                        <menu key="menu" id="rsu-48-flX">
-                                                            <children>
-                                                                <command title="Item 1" id="mpk-sA-XoI"/>
-                                                                <command title="Item 2" id="0cD-SZ-doA"/>
-                                                            </children>
-                                                        </menu>
-                                                        <state key="normal" title="評価値">
-                                                            <color key="titleColor" red="1" green="0.5" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                                        </state>
-                                                    </button>
                                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uQJ-K7-yzl">
                                                         <rect key="frame" x="74" y="16" width="53" height="31"/>
                                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -619,6 +605,13 @@
                                                             <color key="baseForegroundColor" red="1" green="0.5" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                         </buttonConfiguration>
                                                     </button>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="＿＿点" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kpv-L7-hI0">
+                                                        <rect key="frame" x="275" y="21" width="52" height="21"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
                                                 </subviews>
                                             </view>
                                         </subviews>
@@ -708,6 +701,7 @@
                         <outlet property="改善点" destination="mkZ-jH-paQ" id="q6F-cX-Z1N"/>
                         <outlet property="活かせた長所" destination="74c-hL-MQ7" id="Cgy-sE-NnC"/>
                         <outlet property="目標と困難" destination="WwU-hd-MLB" id="dI0-Pq-r08"/>
+                        <outlet property="評価" destination="kpv-L7-hI0" id="N7A-g2-4VJ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uxq-Qs-Yw6" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -742,17 +736,17 @@
             <objects>
                 <viewController storyboardIdentifier="EpisodeEdit" title="EpisodeEdit" id="Cdl-g1-6xE" customClass="EpisodeDetailViewController" customModule="ShukatsuSupportApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="I7P-St-M2x">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="2000"/>
+                        <rect key="frame" x="0.0" y="0.0" width="376" height="2000"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rXs-JT-Fio">
-                                <rect key="frame" x="0.0" y="44" width="375" height="1956"/>
+                                <rect key="frame" x="0.0" y="44" width="376" height="1956"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qWv-OM-WSg">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="2000"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="376" height="2000"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MYS-cU-WEk">
-                                                <rect key="frame" x="15" y="463" width="345" height="160"/>
+                                                <rect key="frame" x="15" y="463" width="346" height="160"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="目標と困難" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MW9-Jq-Trb">
                                                         <rect key="frame" x="8" y="0.0" width="102" height="24"/>
@@ -761,7 +755,7 @@
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="vNl-0C-phi">
-                                                        <rect key="frame" x="0.0" y="32" width="345" height="128"/>
+                                                        <rect key="frame" x="0.0" y="32" width="346" height="128"/>
                                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="128" id="uEd-GN-GNL"/>
@@ -781,7 +775,7 @@
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KLQ-zn-GDw">
-                                                <rect key="frame" x="15" y="648" width="345" height="160"/>
+                                                <rect key="frame" x="15" y="648" width="346" height="160"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="工夫した点" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wpc-fj-cYq">
                                                         <rect key="frame" x="8" y="0.0" width="102" height="24"/>
@@ -790,7 +784,7 @@
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="s4G-SH-f5K">
-                                                        <rect key="frame" x="0.0" y="32" width="345" height="128"/>
+                                                        <rect key="frame" x="0.0" y="32" width="346" height="128"/>
                                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="128" id="Sg4-99-teu"/>
@@ -810,7 +804,7 @@
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lOe-5n-q6v">
-                                                <rect key="frame" x="15" y="837" width="345" height="160"/>
+                                                <rect key="frame" x="15" y="837" width="346" height="160"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="取り組んだ結果" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OWn-ZP-gRh">
                                                         <rect key="frame" x="8" y="0.0" width="143" height="24"/>
@@ -819,7 +813,7 @@
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="MbZ-iE-5Hq">
-                                                        <rect key="frame" x="0.0" y="32" width="345" height="128"/>
+                                                        <rect key="frame" x="0.0" y="32" width="346" height="128"/>
                                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="128" id="Y5x-h0-ofj"/>
@@ -839,7 +833,7 @@
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rY2-Ld-6Qy">
-                                                <rect key="frame" x="15" y="1025" width="345" height="160"/>
+                                                <rect key="frame" x="15" y="1025" width="346" height="160"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="活かせた長所・強み" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tlQ-iB-cH5">
                                                         <rect key="frame" x="8" y="0.0" width="184" height="24"/>
@@ -848,7 +842,7 @@
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="zmE-jJ-sqk">
-                                                        <rect key="frame" x="0.0" y="32" width="345" height="128"/>
+                                                        <rect key="frame" x="0.0" y="32" width="346" height="128"/>
                                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="128" id="yL2-Mz-LSP"/>
@@ -868,7 +862,7 @@
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wjV-OG-VhG">
-                                                <rect key="frame" x="15" y="1215" width="345" height="160"/>
+                                                <rect key="frame" x="15" y="1215" width="346" height="160"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="改善点" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LPQ-ko-15h">
                                                         <rect key="frame" x="0.0" y="0.0" width="62" height="24"/>
@@ -877,7 +871,7 @@
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="RnW-ev-AIU">
-                                                        <rect key="frame" x="0.0" y="32" width="345" height="128"/>
+                                                        <rect key="frame" x="0.0" y="32" width="346" height="128"/>
                                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="128" id="S2P-Dv-rTJ"/>
@@ -897,7 +891,7 @@
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HyF-pW-Zwf">
-                                                <rect key="frame" x="15" y="1395" width="345" height="160"/>
+                                                <rect key="frame" x="15" y="1395" width="346" height="160"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="学んだこと" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5ks-S4-bth">
                                                         <rect key="frame" x="0.0" y="0.0" width="102" height="24"/>
@@ -906,7 +900,7 @@
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="vaJ-zy-csR">
-                                                        <rect key="frame" x="0.0" y="32" width="345" height="128"/>
+                                                        <rect key="frame" x="0.0" y="32" width="346" height="128"/>
                                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="128" id="b5J-hh-xAM"/>
@@ -926,7 +920,7 @@
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5dp-id-fc4">
-                                                <rect key="frame" x="15" y="285" width="345" height="160"/>
+                                                <rect key="frame" x="15" y="285" width="346" height="160"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="具体的に何をした" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RHc-fJ-Isb">
                                                         <rect key="frame" x="8" y="8" width="164" height="24"/>
@@ -935,7 +929,7 @@
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="BIk-PG-dn0">
-                                                        <rect key="frame" x="0.0" y="32" width="345" height="128"/>
+                                                        <rect key="frame" x="0.0" y="32" width="346" height="128"/>
                                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                         <color key="textColor" systemColor="labelColor"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -953,7 +947,7 @@
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fVr-ID-2uf">
-                                                <rect key="frame" x="15" y="65" width="345" height="111"/>
+                                                <rect key="frame" x="15" y="65" width="346" height="111"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="タイトル" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hbq-7A-W3s">
                                                         <rect key="frame" x="8" y="8" width="82" height="24"/>
@@ -962,7 +956,7 @@
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="BzG-MM-ulw">
-                                                        <rect key="frame" x="0.0" y="57" width="345" height="34"/>
+                                                        <rect key="frame" x="0.0" y="57" width="346" height="34"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                         <textInputTraits key="textInputTraits"/>
                                                     </textField>
@@ -977,7 +971,7 @@
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="l4q-z1-L0n">
-                                                <rect key="frame" x="15" y="200" width="345" height="63"/>
+                                                <rect key="frame" x="15" y="200" width="346" height="63"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="いつ" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8Sn-df-rKd">
                                                         <rect key="frame" x="8" y="19" width="41" height="24"/>
@@ -993,19 +987,6 @@
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" showsMenuAsPrimaryAction="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8fU-wS-HOv">
-                                                        <rect key="frame" x="274" y="16" width="46" height="30"/>
-                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                        <menu key="menu" id="wkp-JE-8Lg">
-                                                            <children>
-                                                                <command title="Item 1" id="AJa-K1-u2x"/>
-                                                                <command title="Item 2" id="zl7-tR-blb"/>
-                                                            </children>
-                                                        </menu>
-                                                        <state key="normal" title="評価値">
-                                                            <color key="titleColor" red="1" green="0.5" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                                        </state>
-                                                    </button>
                                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xyj-2I-Ida">
                                                         <rect key="frame" x="74" y="16" width="53" height="31"/>
                                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -1014,6 +995,13 @@
                                                             <color key="baseForegroundColor" red="1" green="0.5" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                         </buttonConfiguration>
                                                     </button>
+                                                    <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="bezel" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ez1-5h-6a3">
+                                                        <rect key="frame" x="260" y="14" width="78" height="34"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                        <textInputTraits key="textInputTraits"/>
+                                                    </textField>
                                                 </subviews>
                                                 <color key="backgroundColor" red="0.91007167100906372" green="0.6833004355430603" blue="0.36036515235900879" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             </view>
@@ -1094,7 +1082,7 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
-                    <size key="freeformSize" width="375" height="2000"/>
+                    <size key="freeformSize" width="376" height="2000"/>
                     <connections>
                         <outlet property="タイトル" destination="BzG-MM-ulw" id="6gc-mD-PIf"/>
                         <outlet property="具体的に何をした" destination="BIk-PG-dn0" id="L8B-El-TSy"/>
@@ -1104,11 +1092,85 @@
                         <outlet property="改善点" destination="RnW-ev-AIU" id="Af7-3s-Feh"/>
                         <outlet property="活かせた長所" destination="zmE-jJ-sqk" id="M5f-KN-RGw"/>
                         <outlet property="目標と困難" destination="vNl-0C-phi" id="cTJ-H9-tnO"/>
+                        <outlet property="評価" destination="ez1-5h-6a3" id="evX-nh-2tj"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cFS-zG-Gad" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3997.5999999999999" y="-300.44977511244377"/>
+            <point key="canvasLocation" x="3998.4000000000001" y="-300.44977511244377"/>
+        </scene>
+        <!--Date Picker Sample View Controller-->
+        <scene sceneID="S9R-ac-MiJ">
+            <objects>
+                <viewController id="eda-DN-pb2" customClass="DatePickerSampleViewController" customModule="ShukatsuSupportApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="CL0-Yd-9eg">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="K1e-zX-eHQ">
+                                <rect key="frame" x="139" y="60" width="97" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="i8W-8P-UPh" customClass="MonthAndDayPickerView" customModule="ShukatsuSupportApp" customModuleProvider="target">
+                                <rect key="frame" x="67" y="241" width="240" height="128"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="18l-m3-eCz"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <connections>
+                        <outlet property="birthdayField" destination="K1e-zX-eHQ" id="j0e-OX-bMJ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="No8-mV-w5E" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="687" y="-1290"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="ysv-Sp-Ope">
+            <objects>
+                <viewController id="6TX-lE-uEH" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="rrL-l5-ks5">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <datePicker contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" style="compact" translatesAutoresizingMaskIntoConstraints="NO" id="hMP-E6-BvI">
+                                <rect key="frame" x="0.0" y="278" width="375" height="162"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <locale key="locale" localeIdentifier="ja_JP"/>
+                            </datePicker>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NLb-KW-A86">
+                                <rect key="frame" x="148" y="566" width="78" height="31"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="GetDate"/>
+                                <connections>
+                                    <action selector="GetDate:" destination="6TX-lE-uEH" eventType="touchUpInside" id="j0o-yR-HFg"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ppu-xY-tKZ">
+                                <rect key="frame" x="0.0" y="94" width="375" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="kn1-uw-aBg"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <connections>
+                        <outlet property="Label" destination="ppu-xY-tKZ" id="4Ht-4A-kEl"/>
+                        <outlet property="Picker" destination="hMP-E6-BvI" id="MWw-km-Rpo"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="jRc-Fq-RCw" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="172" y="-640"/>
         </scene>
         <!--文章作成-->
         <scene sceneID="rha-Cp-Jo9">
