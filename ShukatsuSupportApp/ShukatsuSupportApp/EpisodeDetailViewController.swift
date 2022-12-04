@@ -7,10 +7,13 @@
 
 import UIKit
 import RealmSwift
+import SwiftUI
 
 //試しに作っているやつ
-class EpisodeDetailViewController: UIViewController{
+class EpisodeDetailViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource, UITextFieldDelegate{
+    
     @IBOutlet var タイトル : UITextField!
+    @IBOutlet var 評価点: UITextField!
     @IBOutlet var 具体的に何をした: UITextView!
     @IBOutlet var 目標と困難: UITextView!
     @IBOutlet var 工夫した点: UITextView!
@@ -19,6 +22,8 @@ class EpisodeDetailViewController: UIViewController{
     @IBOutlet var 改善点: UITextView!
     @IBOutlet var 学んだこと: UITextView!
     
+    var 選択肢: [String] = []
+    weak var pickerView: UIPickerView?
     
     //Realmを使うときのお決まりのやつ
     let realm = try! Realm()
@@ -29,10 +34,52 @@ class EpisodeDetailViewController: UIViewController{
 //        タイトル.placeholder = "タイトルを入力してください"
         //データをコンソールに表示
         let userData = realm.objects(User.self)
-        print("🟥全てのデータ\(userData)")
-//        print(Realm.Configuration.defaultConfiguration.fileURL!)
-    }
+        
+        選択肢.append("")
+        選択肢.append("5: 満足")
+        選択肢.append("4: 少し満足")
+        選択肢.append("3: 普通")
+        選択肢.append("2: 少し不満")
+        選択肢.append("1: 不満")
+        
+        let pv = UIPickerView()
+        pv.delegate = self
+        pv.dataSource = self
 
+        評価点.delegate = self
+        評価点.inputAssistantItem.leadingBarButtonGroups = []
+        評価点.inputView = pv
+        self.pickerView = pv
+
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(self.dismissKeyboard))
+        tap.cancelsTouchesInView = false
+        self.view.addGestureRecognizer(tap)
+        
+        print("🟥全てのデータ\(userData)")
+        print(Realm.Configuration.defaultConfiguration.fileURL!)
+    }
+    //評価点PickerView
+    //↓↓↓↓
+        @objc func dismissKeyboard() {
+            self.view.endEditing(true)
+        }
+    
+        func numberOfComponents(in pickerView: UIPickerView) -> Int {
+            return 1
+        }
+
+        func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+            return 選択肢.count
+        }
+
+        func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+            return 選択肢[row]
+        }
+
+        func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+            評価点.text = 選択肢[row]
+        }
+    //↑↑↑↑
     @IBAction func 保存(_ sender: Any) {
         
         if(タイトル.text! == ""){
@@ -50,7 +97,33 @@ class EpisodeDetailViewController: UIViewController{
         user.user活かせた長所 = 活かせた長所.text!
         user.user改善点 = 改善点.text!
         user.user学んだこと = 学んだこと.text!
-            
+        
+        switch 評価点.text{
+        case "5: 満足":
+            user.user評価点 = "5"
+            print("5点")
+            break
+        case "4: 少し満足":
+            user.user評価点 = "4"
+            print("4点")
+            break
+        case "3: 普通":
+            user.user評価点 = "3"
+            print("3点")
+            break
+        case "2: 少し不満":
+            user.user評価点 = "2"
+            print("2点")
+            break
+        case "1: 不満":
+            user.user評価点 = "1"
+            print("1点")
+            break
+        default:
+            user.user評価点 = ""
+            print("評価未記入")
+        }
+        
         try! realm.write {
             realm.add(user)
         }
