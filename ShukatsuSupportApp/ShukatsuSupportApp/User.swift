@@ -9,6 +9,7 @@ import Foundation
 import RealmSwift
 
 class User: Object {
+    //項目追加時は一回アンインストール
     @objc dynamic var userタイトル = ""
     @objc dynamic var user具体的に何をした = ""
     @objc dynamic var user目標と困難 = ""
@@ -17,4 +18,5 @@ class User: Object {
     @objc dynamic var user活かせた長所 = ""
     @objc dynamic var user改善点 = ""
     @objc dynamic var user学んだこと = ""
+    @objc dynamic var user評価点 = ""
 }

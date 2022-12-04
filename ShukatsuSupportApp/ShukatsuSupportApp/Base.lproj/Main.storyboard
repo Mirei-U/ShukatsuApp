@@ -701,7 +701,7 @@
                         <outlet property="改善点" destination="mkZ-jH-paQ" id="q6F-cX-Z1N"/>
                         <outlet property="活かせた長所" destination="74c-hL-MQ7" id="Cgy-sE-NnC"/>
                         <outlet property="目標と困難" destination="WwU-hd-MLB" id="dI0-Pq-r08"/>
-                        <outlet property="評価" destination="kpv-L7-hI0" id="N7A-g2-4VJ"/>
+                        <outlet property="評価" destination="kpv-L7-hI0" id="1gy-GN-0sf"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uxq-Qs-Yw6" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -1092,7 +1092,7 @@
                         <outlet property="改善点" destination="RnW-ev-AIU" id="Af7-3s-Feh"/>
                         <outlet property="活かせた長所" destination="zmE-jJ-sqk" id="M5f-KN-RGw"/>
                         <outlet property="目標と困難" destination="vNl-0C-phi" id="cTJ-H9-tnO"/>
-                        <outlet property="評価" destination="ez1-5h-6a3" id="evX-nh-2tj"/>
+                        <outlet property="評価点" destination="ez1-5h-6a3" id="RbJ-6G-dM5"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cFS-zG-Gad" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

@@ -14,6 +14,7 @@ class PreviewEpisode: UIViewController {
     let edit = EpisodeDetailViewController()
    
     @IBOutlet weak var タイトル : UITextField!
+    @IBOutlet weak var 評価: UILabel!
     @IBOutlet weak var 具体的に何をした: UITextView!
     @IBOutlet weak var 目標と困難: UITextView!
     @IBOutlet weak var 工夫した点: UITextView!
@@ -39,6 +40,7 @@ class PreviewEpisode: UIViewController {
 //        let 保存済み改善点 = UserDefaults.standard.string(forKey: "改善点キー")
 //        let 保存済み学んだこと = UserDefaults.standard.string(forKey: "学んだことキー")
         タイトル.text = ""
+        評価.text=""
         具体的に何をした.text  = ""
         目標と困難.text  = ""
         工夫した点.text  = ""

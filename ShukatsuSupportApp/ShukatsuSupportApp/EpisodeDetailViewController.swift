@@ -11,7 +11,7 @@ import SwiftUI
 
 //試しに作っているやつ
 class EpisodeDetailViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource, UITextFieldDelegate{
-    
+
     @IBOutlet var タイトル : UITextField!
     @IBOutlet var 評価点: UITextField!
     @IBOutlet var 具体的に何をした: UITextView!
@@ -21,7 +21,7 @@ class EpisodeDetailViewController: UIViewController, UIPickerViewDelegate, UIPic
     @IBOutlet var 活かせた長所: UITextView!
     @IBOutlet var 改善点: UITextView!
     @IBOutlet var 学んだこと: UITextView!
-    
+
     var 選択肢: [String] = []
     weak var pickerView: UIPickerView?
     
@@ -30,8 +30,6 @@ class EpisodeDetailViewController: UIViewController, UIPickerViewDelegate, UIPic
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-//        タイトル.placeholder = "タイトルを入力してください"
         //データをコンソールに表示
         let userData = realm.objects(User.self)
         
@@ -125,6 +123,7 @@ class EpisodeDetailViewController: UIViewController, UIPickerViewDelegate, UIPic
         }
         
         try! realm.write {
+//            realm.delete(realm.objects(User.self))
             realm.add(user)
         }
     }
