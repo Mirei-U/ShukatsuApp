@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		B71587471DCBD28B1A9DD0B4 /* Pods_ShukatsuSupportApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EE595CE41639B4D0280B9A20 /* Pods_ShukatsuSupportApp.framework */; };
+		CB1F75B2293D7B92002AF86B /* NazeNazeQuestionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB1F75B1293D7B92002AF86B /* NazeNazeQuestionViewController.swift */; };
+		CB1F75B4293DC4BD002AF86B /* EditWritingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB1F75B3293DC4BD002AF86B /* EditWritingViewController.swift */; };
 		CB22623D290C1CAE003B1F1C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB22623C290C1CAE003B1F1C /* AppDelegate.swift */; };
 		CB22623F290C1CAE003B1F1C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB22623E290C1CAE003B1F1C /* SceneDelegate.swift */; };
 		CB226241290C1CAE003B1F1C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB226240290C1CAE003B1F1C /* ViewController.swift */; };
@@ -48,6 +50,8 @@
 /* Begin PBXFileReference section */
 		620EFB388184CE82141E494A /* Pods-ShukatsuSupportApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ShukatsuSupportApp.debug.xcconfig"; path = "Target Support Files/Pods-ShukatsuSupportApp/Pods-ShukatsuSupportApp.debug.xcconfig"; sourceTree = "<group>"; };
 		AA434E51F90DF281F9A32D17 /* Pods-ShukatsuSupportApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ShukatsuSupportApp.release.xcconfig"; path = "Target Support Files/Pods-ShukatsuSupportApp/Pods-ShukatsuSupportApp.release.xcconfig"; sourceTree = "<group>"; };
+		CB1F75B1293D7B92002AF86B /* NazeNazeQuestionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NazeNazeQuestionViewController.swift; sourceTree = "<group>"; };
+		CB1F75B3293DC4BD002AF86B /* EditWritingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditWritingViewController.swift; sourceTree = "<group>"; };
 		CB226239290C1CAE003B1F1C /* ShukatsuSupportApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ShukatsuSupportApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CB22623C290C1CAE003B1F1C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CB22623E290C1CAE003B1F1C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -148,6 +152,8 @@
 				CB22623E290C1CAE003B1F1C /* SceneDelegate.swift */,
 				CB226240290C1CAE003B1F1C /* ViewController.swift */,
 				CB226242290C1CAE003B1F1C /* Main.storyboard */,
+				CB1F75B3293DC4BD002AF86B /* EditWritingViewController.swift */,
+				CB1F75B1293D7B92002AF86B /* NazeNazeQuestionViewController.swift */,
 				CBAF3BEE2933E1F900B7A1DE /* PreviewEpisode.swift */,
 				CBAF3BF02933E23900B7A1DE /* EditEpisode.swift */,
 				CBB682CD291DEC8A001A1C05 /* EpisodeDetailViewController.swift */,
@@ -360,6 +366,7 @@
 			files = (
 				CBAF3BE92933E08800B7A1DE /* GraphViewController.swift in Sources */,
 				CB22626D290C2167003B1F1C /* TOPViewController.swift in Sources */,
+				CB1F75B4293DC4BD002AF86B /* EditWritingViewController.swift in Sources */,
 				CBAF3BEF2933E1F900B7A1DE /* PreviewEpisode.swift in Sources */,
 				CBAF3BF12933E23900B7A1DE /* EditEpisode.swift in Sources */,
 				CB226241290C1CAE003B1F1C /* ViewController.swift in Sources */,
@@ -368,6 +375,7 @@
 				CB22623D290C1CAE003B1F1C /* AppDelegate.swift in Sources */,
 				CBAD24DC29182F7800C2DC80 /* NazeNazeViewController.swift in Sources */,
 				CB22623F290C1CAE003B1F1C /* SceneDelegate.swift in Sources */,
+				CB1F75B2293D7B92002AF86B /* NazeNazeQuestionViewController.swift in Sources */,
 				CBAF3BED2933E1A700B7A1DE /* User.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

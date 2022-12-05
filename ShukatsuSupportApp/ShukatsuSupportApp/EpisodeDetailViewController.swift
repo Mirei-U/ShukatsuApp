@@ -135,15 +135,6 @@ class EpisodeDetailViewController: UIViewController, UIPickerViewDelegate, UIPic
     }
 
 
-        //書いた後リセット
-//        タイトル.text = ""
-//        具体的に何をした.text = ""
-//        目標と困難.text = ""
-//        工夫した点.text = ""
-//        取り組んだ結果.text = ""
-//        活かせた長所.text = ""
-//        改善点.text = ""
-//        学んだこと.text = ""
         
         //テーブルをリセット
 //        tableView.reloadData()

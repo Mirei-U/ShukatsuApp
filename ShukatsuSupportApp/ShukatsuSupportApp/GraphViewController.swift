@@ -7,6 +7,7 @@
 
 import UIKit
 import Charts
+import Realm
 
 
 struct EpisodeInfo{
@@ -18,6 +19,7 @@ struct EpisodeInfo{
     var 活かせた長所: String
     var 改善点: String
     var 学んだこと: String
+    var 評価: String
 }
 class GraphViewController: UIViewController,UITableViewDelegate,UITableViewDataSource {
 
@@ -26,10 +28,6 @@ class GraphViewController: UIViewController,UITableViewDelegate,UITableViewDataS
     
     var chartView: LineChartView!
     var chartDataSet: LineChartDataSet!
-   
-    // 今回使用するサンプルデータ
-    let sampleData = [3.0,3.0,3.0,4.0,4.0,5.0,5.0,5.0,2.0]
-    
     
 
     //cellに表示する内容(仮)
@@ -37,6 +35,8 @@ class GraphViewController: UIViewController,UITableViewDelegate,UITableViewDataS
 //    let edit = EditEpisode()
     let edit = EpisodeDetailViewController()
 //
+    // 今回使用するサンプルデータ
+    let sampleData = [3.0,3.0,3.0,4.0,4.0,5.0,5.0,5.0,2.0]
     
     
     @IBOutlet weak var Episode: UITableView!
