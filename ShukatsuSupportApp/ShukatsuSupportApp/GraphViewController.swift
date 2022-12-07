@@ -20,6 +20,7 @@ struct EpisodeInfo{
     var 改善点: String
     var 学んだこと: String
     var 評価: String
+    var 日付: String
 }
 class GraphViewController: UIViewController,UITableViewDelegate,UITableViewDataSource {
 

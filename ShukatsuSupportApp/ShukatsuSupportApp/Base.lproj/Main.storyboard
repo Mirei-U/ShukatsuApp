@@ -600,16 +600,15 @@
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uQJ-K7-yzl">
-                                                        <rect key="frame" x="74" y="16" width="53" height="31"/>
-                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                        <state key="normal" title="Button"/>
-                                                        <buttonConfiguration key="configuration" style="plain" title="日付">
-                                                            <color key="baseForegroundColor" red="1" green="0.5" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                                        </buttonConfiguration>
-                                                    </button>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="＿＿点" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kpv-L7-hI0">
                                                         <rect key="frame" x="275" y="21" width="52" height="21"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="yy/mm/dd" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ASP-bS-ATq">
+                                                        <rect key="frame" x="57" y="19" width="116" height="21"/>
                                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                         <nil key="textColor"/>
@@ -702,6 +701,7 @@
                         <outlet property="学んだこと" destination="M6d-jz-7GD" id="uEl-pG-5CX"/>
                         <outlet property="工夫した点" destination="me7-xi-zWF" id="H0U-Nq-o6R"/>
                         <outlet property="改善点" destination="mkZ-jH-paQ" id="q6F-cX-Z1N"/>
+                        <outlet property="日付" destination="ASP-bS-ATq" id="FnO-iW-fGQ"/>
                         <outlet property="活かせた長所" destination="74c-hL-MQ7" id="Cgy-sE-NnC"/>
                         <outlet property="目標と困難" destination="WwU-hd-MLB" id="dI0-Pq-r08"/>
                         <outlet property="評価" destination="kpv-L7-hI0" id="1gy-GN-0sf"/>
@@ -710,7 +710,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uxq-Qs-Yw6" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <exit id="Cmd-yQ-2W5" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="2927" y="50"/>
+            <point key="canvasLocation" x="2925.5999999999999" y="49.475262368815599"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="b54-3F-djc">
@@ -983,28 +983,27 @@
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="評価" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wDW-np-ODY">
-                                                        <rect key="frame" x="211" y="19" width="41" height="24"/>
-                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                                        <nil key="textColor"/>
-                                                        <nil key="highlightedColor"/>
-                                                    </label>
-                                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xyj-2I-Ida">
-                                                        <rect key="frame" x="74" y="16" width="53" height="31"/>
-                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                        <state key="normal" title="Button"/>
-                                                        <buttonConfiguration key="configuration" style="plain" title="日付">
-                                                            <color key="baseForegroundColor" red="1" green="0.5" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                                        </buttonConfiguration>
-                                                    </button>
-                                                    <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="bezel" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ez1-5h-6a3">
+                                                    <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="bezel" textAlignment="natural" adjustsFontForContentSizeCategory="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ez1-5h-6a3">
                                                         <rect key="frame" x="260" y="14" width="78" height="34"/>
                                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                         <textInputTraits key="textInputTraits"/>
                                                     </textField>
+                                                    <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="bezel" textAlignment="natural" adjustsFontForContentSizeCategory="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="olP-h4-pf5">
+                                                        <rect key="frame" x="57" y="14" width="134" height="34"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                        <textInputTraits key="textInputTraits"/>
+                                                    </textField>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="評価" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wDW-np-ODY">
+                                                        <rect key="frame" x="199" y="19" width="41" height="24"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
                                                 </subviews>
                                                 <color key="backgroundColor" red="0.91007167100906372" green="0.6833004355430603" blue="0.36036515235900879" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             </view>
@@ -1093,6 +1092,7 @@
                         <outlet property="学んだこと" destination="vaJ-zy-csR" id="ZMe-g4-j23"/>
                         <outlet property="工夫した点" destination="s4G-SH-f5K" id="ERF-Md-Fz4"/>
                         <outlet property="改善点" destination="RnW-ev-AIU" id="Af7-3s-Feh"/>
+                        <outlet property="日付" destination="olP-h4-pf5" id="Fin-ml-mE5"/>
                         <outlet property="活かせた長所" destination="zmE-jJ-sqk" id="M5f-KN-RGw"/>
                         <outlet property="目標と困難" destination="vNl-0C-phi" id="cTJ-H9-tnO"/>
                         <outlet property="評価点" destination="ez1-5h-6a3" id="RbJ-6G-dM5"/>
@@ -1100,38 +1100,30 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cFS-zG-Gad" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3973" y="-274"/>
+            <point key="canvasLocation" x="3972.8000000000002" y="-274.36281859070465"/>
         </scene>
-        <!--Date Picker Sample View Controller-->
+        <!--View Controller-->
         <scene sceneID="S9R-ac-MiJ">
             <objects>
-                <viewController id="eda-DN-pb2" customClass="DatePickerSampleViewController" customModule="ShukatsuSupportApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="eda-DN-pb2" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="CL0-Yd-9eg">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="K1e-zX-eHQ">
-                                <rect key="frame" x="139" y="60" width="97" height="34"/>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="weM-4I-TOj">
+                                <rect key="frame" x="56" y="171" width="263" height="34"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="i8W-8P-UPh" customClass="MonthAndDayPickerView" customModule="ShukatsuSupportApp" customModuleProvider="target">
-                                <rect key="frame" x="67" y="241" width="240" height="128"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="18l-m3-eCz"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
-                    <connections>
-                        <outlet property="birthdayField" destination="K1e-zX-eHQ" id="j0e-OX-bMJ"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="No8-mV-w5E" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="687" y="-1290"/>
+            <point key="canvasLocation" x="-26.399999999999999" y="-609.44527736131943"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="ysv-Sp-Ope">
@@ -1173,7 +1165,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jRc-Fq-RCw" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="172" y="-640"/>
+            <point key="canvasLocation" x="-25" y="-1290"/>
         </scene>
         <!--文章作成-->
         <scene sceneID="rha-Cp-Jo9">

@@ -9,10 +9,15 @@ import UIKit
 import RealmSwift
 import SwiftUI
 
-//試しに作っているやつ
+
+let YEAR_TO_DATE = Date()
+let DATE_FORMATTER = DateFormatter()
+var DATE = ""
+
 class EpisodeDetailViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource, UITextFieldDelegate{
 
     @IBOutlet var タイトル : UITextField!
+    @IBOutlet var 日付: UITextField!
     @IBOutlet var 評価点: UITextField!
     @IBOutlet var 具体的に何をした: UITextView!
     @IBOutlet var 目標と困難: UITextView!
@@ -25,6 +30,8 @@ class EpisodeDetailViewController: UIViewController, UIPickerViewDelegate, UIPic
     var 選択肢: [String] = []
     weak var pickerView: UIPickerView?
     
+    var datePicker: UIDatePicker = UIDatePicker()
+    
     //Realmを使うときのお決まりのやつ
     let realm = try! Realm()
     
@@ -33,6 +40,27 @@ class EpisodeDetailViewController: UIViewController, UIPickerViewDelegate, UIPic
         //データをコンソールに表示
         let userData = realm.objects(User.self)
         
+        //日付
+        // DateFormatter を使用して書式とロケールを指定する
+        DATE_FORMATTER.locale = Locale(identifier: "ja_JP")//日本語にするため
+        DATE_FORMATTER.dateFormat = "y年MM月dd日"//これは表示する形を設定
+        DATE = DATE_FORMATTER.string(from: YEAR_TO_DATE)//最初に今日の日付を入れておく。
+        日付.text = DATE//曜日も表示
+        // ピッカー設定
+        datePicker.datePickerMode = UIDatePicker.Mode.date
+        datePicker.timeZone = NSTimeZone.local
+        datePicker.locale = Locale(identifier: "ja_JP")//日本語にするため
+        datePicker.preferredDatePickerStyle = .wheels//ドラムロール
+        日付.inputView = datePicker
+        // 決定バーの生成
+        let toolbar = UIToolbar(frame: CGRect(x: 0, y: 0, width: view.frame.size.width, height: 35))
+        let spacelItem = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: self, action: nil)
+        let doneItem = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(done))
+        toolbar.setItems([spacelItem, doneItem], animated: true)
+        // インプットビュー設定(紐づいているUITextfieldへ代入)
+        日付.inputView = datePicker
+        日付.inputAccessoryView = toolbar
+        //
         選択肢.append("")
         選択肢.append("5: 満足")
         選択肢.append("4: 少し満足")
@@ -78,6 +106,20 @@ class EpisodeDetailViewController: UIViewController, UIPickerViewDelegate, UIPic
             評価点.text = 選択肢[row]
         }
     //↑↑↑↑
+    
+    // UIDatePickerのDoneを押したらTextFieldもそれに変わる。
+    @objc func done() {
+        日付.endEditing(true)
+        //(from: datePicker.date))を指定してあげることで
+        //datePickerで指定した日付が表示される
+        DATE = DATE_FORMATTER.string(from: datePicker.date)
+        日付.text = DATE
+    }
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
+    }
+    
     @IBAction func 保存(_ sender: Any) {
         
         if(タイトル.text! == ""){
@@ -88,6 +130,7 @@ class EpisodeDetailViewController: UIViewController, UIPickerViewDelegate, UIPic
         print("⏪戻る")
         let user = User()
         user.userタイトル = タイトル.text!
+        user.user日付 = 日付.text!
         user.user具体的に何をした = 具体的に何をした.text!
         user.user目標と困難 = 目標と困難.text!
         user.user工夫した点 = 工夫した点.text!

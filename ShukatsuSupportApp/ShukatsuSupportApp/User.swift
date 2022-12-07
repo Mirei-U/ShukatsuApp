@@ -18,7 +18,9 @@ class User: Object {
     @objc dynamic var user活かせた長所 = ""
     @objc dynamic var user改善点 = ""
     @objc dynamic var user学んだこと = ""
+    @objc dynamic var user日付 = ""
     @objc dynamic var user評価点 = ""
+    
     
     @objc dynamic var userなぜなぜ1 = ""
     @objc dynamic var userなぜなぜ2 = ""
