@@ -44,8 +44,8 @@ class EpisodeDetailViewController: UIViewController, UIPickerViewDelegate, UIPic
         // DateFormatter を使用して書式とロケールを指定する
         DATE_FORMATTER.locale = Locale(identifier: "ja_JP")//日本語にするため
         DATE_FORMATTER.dateFormat = "y年MM月dd日"//これは表示する形を設定
-        DATE = DATE_FORMATTER.string(from: YEAR_TO_DATE)//最初に今日の日付を入れておく。
-        日付.text = DATE//曜日も表示
+//        DATE = DATE_FORMATTER.string(from: YEAR_TO_DATE)//最初に今日の日付を入れておく。
+//        日付.text = DATE//曜日も表示
         // ピッカー設定
         datePicker.datePickerMode = UIDatePicker.Mode.date
         datePicker.timeZone = NSTimeZone.local
