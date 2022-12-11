@@ -7,6 +7,7 @@
 
 import UIKit
 import Charts
+import RealmSwift
 
 class NazeNazeViewController: UIViewController,UITableViewDelegate,UITableViewDataSource {
 
@@ -14,8 +15,7 @@ class NazeNazeViewController: UIViewController,UITableViewDelegate,UITableViewDa
     let edit = EpisodeDetailViewController()
     var chartView: LineChartView!
     var chartDataSet: LineChartDataSet!
-    // 今回使用するサンプルデータ
-    let sampleData = [3.0,3.0,3.0,4.0,4.0,5.0,5.0,5.0,2.0]
+    var sampleData:[Int] = []
     
     @IBOutlet var EpisodeTableView: UITableView!
     @IBOutlet weak var NazeNazeLabel: UILabel!
@@ -27,10 +27,19 @@ class NazeNazeViewController: UIViewController,UITableViewDelegate,UITableViewDa
         
         EpisodeTableView.dataSource = self
         EpisodeTableView.delegate = self
-        
+    }
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        //Realm準備
+        let realm = try! Realm()
+        let userData = realm.objects(User.self)
+        var sampleData:[Int] = []
+        // グラフを表示する
+        for i in 0 ..< userData.count{
+            sampleData.append(Int(userData[i].user評価点) ?? 0)
+        }
         displayChart(data: sampleData)
     }
-
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
@@ -47,14 +56,14 @@ class NazeNazeViewController: UIViewController,UITableViewDelegate,UITableViewDa
         return cell
     }
     
-    func displayChart(data: [Double]) {
+    func displayChart(data: [Int]) {
             // グラフの範囲を指定する
-        chartView = LineChartView(frame: CGRect(x: 0, y: 100, width: view.frame.width, height: 230))
+            chartView = LineChartView(frame: CGRect(x: 0, y: 150, width: view.frame.width, height: 230))
             // プロットデータ(y軸)を保持する配列
             var dataEntries = [ChartDataEntry]()
             
             for (xValue, yValue) in data.enumerated() {
-                let dataEntry = ChartDataEntry(x: Double(xValue), y: yValue)
+                let dataEntry = ChartDataEntry(x: Double(xValue), y: Double(yValue))
                 dataEntries.append(dataEntry)
             }
             // グラフにデータを適用
@@ -63,7 +72,7 @@ class NazeNazeViewController: UIViewController,UITableViewDelegate,UITableViewDa
             chartDataSet.lineWidth = 5.0 // グラフの線の太さを変更
             chartDataSet.mode = .cubicBezier // 滑らかなグラフの曲線にする
         
-        chartView.gridBackgroundColor = UIColor(red: 1, green: 0.6, blue: 0.3, alpha: 1.0)
+            chartView.gridBackgroundColor = UIColor(red: 1, green: 0.6, blue: 0.3, alpha: 1.0)
             
         
             chartView.data = LineChartData(dataSet: chartDataSet)
