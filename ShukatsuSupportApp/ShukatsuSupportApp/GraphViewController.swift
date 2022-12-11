@@ -7,7 +7,7 @@
 
 import UIKit
 import Charts
-import Realm
+import RealmSwift
 
 
 struct EpisodeInfo{
@@ -27,19 +27,16 @@ class GraphViewController: UIViewController,UITableViewDelegate,UITableViewDataS
     @IBOutlet var EpisodeTableView: UITableView!
     
     
+   
     var chartView: LineChartView!
     var chartDataSet: LineChartDataSet!
-    
+    var sampleData:[Int] = []
 
     //cellに表示する内容(仮)
     //editepisode継承
 //    let edit = EditEpisode()
     let edit = EpisodeDetailViewController()
 //
-    // 今回使用するサンプルデータ
-    let sampleData = [3.0,3.0,3.0,4.0,4.0,5.0,5.0,5.0,2.0]
-    
-    
     @IBOutlet weak var Episode: UITableView!
     
 
@@ -51,14 +48,20 @@ class GraphViewController: UIViewController,UITableViewDelegate,UITableViewDataS
 
         Episode.dataSource = self
         Episode.delegate = self
-//        loadData()
-        
-        // グラフを表示する
-        displayChart(data: sampleData)
+
     }
     
     override func viewWillAppear(_ animated: Bool) {
-      super.viewWillAppear(animated)
+        super.viewWillAppear(animated)
+        //Realm準備
+        let realm = try! Realm()
+        let userData = realm.objects(User.self)
+        var sampleData:[Int] = []
+        // グラフを表示する
+        for i in 0 ..< userData.count{
+            sampleData.append(Int(userData[i].user評価点) ?? 0)
+        }
+        displayChart(data: sampleData)
       //テーブルを再描画
         Episode.reloadData()
     }
@@ -69,6 +72,7 @@ class GraphViewController: UIViewController,UITableViewDelegate,UITableViewDataS
         return userData.count
     }
     
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 
         let cell: UITableViewCell = tableView.dequeueReusableCell(withIdentifier: "EpisodeCell", for: indexPath)
@@ -76,17 +80,15 @@ class GraphViewController: UIViewController,UITableViewDelegate,UITableViewDataS
         cell.textLabel!.text = "[タイトル：\(userData[indexPath.row].userタイトル)]"
         return cell
     }
-    
-
                         
-    func displayChart(data: [Double]) {
+    func displayChart(data: [Int]) {
             // グラフの範囲を指定する
         chartView = LineChartView(frame: CGRect(x: 0, y: 100, width: view.frame.width, height: 230))
             // プロットデータ(y軸)を保持する配列
             var dataEntries = [ChartDataEntry]()
             
             for (xValue, yValue) in data.enumerated() {
-                let dataEntry = ChartDataEntry(x: Double(xValue), y: yValue)
+                let dataEntry = ChartDataEntry(x: Double(xValue), y: Double(yValue))
                 dataEntries.append(dataEntry)
             }
             // グラフにデータを適用

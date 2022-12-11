@@ -31,21 +31,17 @@ class EpisodeDetailViewController: UIViewController, UIPickerViewDelegate, UIPic
     weak var pickerView: UIPickerView?
     
     var datePicker: UIDatePicker = UIDatePicker()
+//    var graph: GraphViewController = GraphViewController()
     
     //Realmを使うときのお決まりのやつ
     let realm = try! Realm()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        //データをコンソールに表示
-        let userData = realm.objects(User.self)
-        
         //日付
         // DateFormatter を使用して書式とロケールを指定する
         DATE_FORMATTER.locale = Locale(identifier: "ja_JP")//日本語にするため
         DATE_FORMATTER.dateFormat = "y年MM月dd日"//これは表示する形を設定
-//        DATE = DATE_FORMATTER.string(from: YEAR_TO_DATE)//最初に今日の日付を入れておく。
-//        日付.text = DATE//曜日も表示
         // ピッカー設定
         datePicker.datePickerMode = UIDatePicker.Mode.date
         datePicker.timeZone = NSTimeZone.local
@@ -81,6 +77,9 @@ class EpisodeDetailViewController: UIViewController, UIPickerViewDelegate, UIPic
         tap.cancelsTouchesInView = false
         self.view.addGestureRecognizer(tap)
         
+        
+        //データをコンソールに表示
+        let userData = realm.objects(User.self)
         print("🟥全てのデータ\(userData)")
         print(Realm.Configuration.defaultConfiguration.fileURL!)
     }
@@ -142,22 +141,27 @@ class EpisodeDetailViewController: UIViewController, UIPickerViewDelegate, UIPic
         switch 評価点.text{
         case "5: 満足":
             user.user評価点 = "5"
+//            graph.評価点追加(評価: 5)
             print("5点")
             break
         case "4: 少し満足":
             user.user評価点 = "4"
+//            graph.評価点追加(評価: 4)
             print("4点")
             break
         case "3: 普通":
             user.user評価点 = "3"
+//            graph.評価点追加(評価: 3)
             print("3点")
             break
         case "2: 少し不満":
             user.user評価点 = "2"
+//            graph.評価点追加(評価: 2)
             print("2点")
             break
         case "1: 不満":
             user.user評価点 = "1"
+//            graph.評価点追加(評価: 1)
             print("1点")
             break
         default:
