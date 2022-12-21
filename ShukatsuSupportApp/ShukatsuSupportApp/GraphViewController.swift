@@ -88,10 +88,16 @@ class GraphViewController: UIViewController,UITableViewDelegate,UITableViewDataS
         print("選択されたセルのRow番号は\(indexPath.row)です。")
         
         let userData = edit.realm.objects(User.self)
-//        guard let PreviewEpisodeController = storyboard?.instantiateViewController(identifier: "EpisodeView") as? PreviewEpisode else { return }
-//        PreviewEpisodeController.タイトル.text = userData[indexPath.row].userタイトル
-//        self.performSegue(withIdentifier: "toPreviewEpisode", sender: nil)
         タイトル = userData[indexPath.row].userタイトル
+        具体的に何をした = userData[indexPath.row].user具体的に何をした
+        目標と困難 = userData[indexPath.row].user目標と困難
+        工夫した点 = userData[indexPath.row].user工夫した点
+        取り組んだ結果 = userData[indexPath.row].user取り組んだ結果
+        活かせた長所 = userData[indexPath.row].user活かせた長所
+        改善点 = userData[indexPath.row].user改善点
+        学んだこと = userData[indexPath.row].user学んだこと
+        日付 = userData[indexPath.row].user日付
+        評価 = userData[indexPath.row].user評価点
         performSegue(withIdentifier: "toPreviewEpisode", sender: nil)
     }
     
@@ -126,6 +132,7 @@ class GraphViewController: UIViewController,UITableViewDelegate,UITableViewDataS
         print("<< displayChart >>")
             // グラフの範囲を指定する
         chartView = LineChartView(frame: CGRect(x: 0, y: 150, width: view.frame.width, height: 230))
+
             // プロットデータ(y軸)を保持する配列
             var dataEntries = [ChartDataEntry]()
             
@@ -135,13 +142,14 @@ class GraphViewController: UIViewController,UITableViewDelegate,UITableViewDataS
             }
             // グラフにデータを適用
             chartDataSet = LineChartDataSet(entries: dataEntries, label: "SampleDataChart")
-            
             chartDataSet.lineWidth = 5.0 // グラフの線の太さを変更
             chartDataSet.mode = .cubicBezier // 滑らかなグラフの曲線にする
-        
+            chartDataSet.colors =  [UIColor(red: 185/255, green: 255/255, blue: 248/255, alpha: 1.0)]//線の色
+            chartDataSet.circleColors = [UIColor(red: 111/255, green: 237/255, blue: 214/255, alpha: 1.0)]//点の色
         //背景色
             chartView.gridBackgroundColor = UIColor(red: 0.23, green: 0.24, blue: 0.21, alpha: 1.0)
             chartView.data = LineChartData(dataSet: chartDataSet)
+            
             // X軸(xAxis)
             chartView.xAxis.labelPosition = .bottom // x軸ラベルをグラフの下に表示する
             

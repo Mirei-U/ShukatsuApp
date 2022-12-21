@@ -21,6 +21,7 @@
 		CB226260290C1CB4003B1F1C /* ShukatsuSupportAppUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB22625F290C1CB4003B1F1C /* ShukatsuSupportAppUITestsLaunchTests.swift */; };
 		CB22626D290C2167003B1F1C /* TOPViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB22626C290C2167003B1F1C /* TOPViewController.swift */; };
 		CB226270290E9256003B1F1C /* Charts in Frameworks */ = {isa = PBXBuildFile; productRef = CB22626F290E9256003B1F1C /* Charts */; };
+		CB2677D529531F98002A0372 /* EpisodeUpdateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB2677D429531F98002A0372 /* EpisodeUpdateViewController.swift */; };
 		CBAD24DC29182F7800C2DC80 /* NazeNazeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBAD24DB29182F7800C2DC80 /* NazeNazeViewController.swift */; };
 		CBAF3BE92933E08800B7A1DE /* GraphViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBAF3BE82933E08800B7A1DE /* GraphViewController.swift */; };
 		CBAF3BED2933E1A700B7A1DE /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBAF3BEC2933E1A700B7A1DE /* User.swift */; };
@@ -68,6 +69,7 @@
 		CB22625D290C1CB4003B1F1C /* ShukatsuSupportAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShukatsuSupportAppUITests.swift; sourceTree = "<group>"; };
 		CB22625F290C1CB4003B1F1C /* ShukatsuSupportAppUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShukatsuSupportAppUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		CB22626C290C2167003B1F1C /* TOPViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TOPViewController.swift; sourceTree = "<group>"; };
+		CB2677D429531F98002A0372 /* EpisodeUpdateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodeUpdateViewController.swift; sourceTree = "<group>"; };
 		CBAD24DB29182F7800C2DC80 /* NazeNazeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NazeNazeViewController.swift; sourceTree = "<group>"; };
 		CBAF3BE82933E08800B7A1DE /* GraphViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraphViewController.swift; sourceTree = "<group>"; };
 		CBAF3BEC2933E1A700B7A1DE /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
@@ -159,6 +161,7 @@
 				CB1F75B3293DC4BD002AF86B /* EditWritingViewController.swift */,
 				CB1F75B1293D7B92002AF86B /* NazeNazeQuestionViewController.swift */,
 				CBAF3BEE2933E1F900B7A1DE /* PreviewEpisode.swift */,
+				CB2677D429531F98002A0372 /* EpisodeUpdateViewController.swift */,
 				CBAF3BF02933E23900B7A1DE /* EditEpisode.swift */,
 				CBB682CD291DEC8A001A1C05 /* EpisodeDetailViewController.swift */,
 				CB22626C290C2167003B1F1C /* TOPViewController.swift */,
@@ -378,6 +381,7 @@
 				CBAF3BEF2933E1F900B7A1DE /* PreviewEpisode.swift in Sources */,
 				CBAF3BF12933E23900B7A1DE /* EditEpisode.swift in Sources */,
 				CB226241290C1CAE003B1F1C /* ViewController.swift in Sources */,
+				CB2677D529531F98002A0372 /* EpisodeUpdateViewController.swift in Sources */,
 				CBB682CE291DEC8A001A1C05 /* EpisodeDetailViewController.swift in Sources */,
 				CBBDA7232918D507006EC35C /* ESwritingViewController.swift in Sources */,
 				CB22623D290C1CAE003B1F1C /* AppDelegate.swift in Sources */,

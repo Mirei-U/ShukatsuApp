@@ -62,13 +62,11 @@ class ESwritingViewController: UIViewController,UITableViewDelegate,UITableViewD
             }
             // グラフにデータを適用
             chartDataSet = LineChartDataSet(entries: dataEntries, label: "SampleDataChart")
-            
             chartDataSet.lineWidth = 5.0 // グラフの線の太さを変更
             chartDataSet.mode = .cubicBezier // 滑らかなグラフの曲線にする
-        
-        chartView.gridBackgroundColor = UIColor(red: 1, green: 0.6, blue: 0.3, alpha: 1.0)
-            
-        
+            chartDataSet.colors =  [UIColor(red: 152/255, green: 168/255, blue: 248/255, alpha: 1.0)]//線の色
+            chartDataSet.circleColors = [UIColor(red: 188/255, green: 206/255, blue: 248/255, alpha: 1.0)]//点の色
+            chartView.gridBackgroundColor = UIColor(red: 1, green: 0.6, blue: 0.3, alpha: 1.0)
             chartView.data = LineChartData(dataSet: chartDataSet)
             
             // X軸(xAxis)

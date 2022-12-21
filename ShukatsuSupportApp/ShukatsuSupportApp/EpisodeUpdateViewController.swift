@@ -1,19 +1,13 @@
 //
-//  EpisodeDetailViewController.swift
+//  EpisodeUpdateViewController.swift
 //  ShukatsuSupportApp
 //
-//  Created by 内田光玲 on 2022/11/11.
+//  Created by 内田光玲 on 2022/12/21.
 //
 
 import UIKit
 
-class PreviewEpisode: UIViewController {
-
-//    var Episode: EpisodeInfo!
-    
-    let edit = EpisodeDetailViewController()
-    let graph = GraphViewController()
-   
+class EpisodeUpdateViewController: UIViewController {
     @IBOutlet weak var タイトル : UITextField!
     @IBOutlet weak var 日付: UILabel!
     @IBOutlet weak var 評価: UILabel!
@@ -36,10 +30,9 @@ class PreviewEpisode: UIViewController {
     var text_評価: String = ""
     var text_日付: String = ""
     
-//    let realm = try! Realm()
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+
         タイトル.text = text_タイトル
         日付.text = text_日付
         評価.text = text_評価
@@ -50,10 +43,17 @@ class PreviewEpisode: UIViewController {
         活かせた長所.text  = text_活かせた長所
         改善点.text  = text_改善点
         学んだこと.text  = text_学んだこと
-        print("print: \(学んだこと.text)")
     }
-    override func viewWillAppear(_ animated: Bool) {
-        
+    
+
+    /*
+    // MARK: - Navigation
+
+    // In a storyboard-based application, you will often want to do a little preparation before navigation
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        // Get the new view controller using segue.destination.
+        // Pass the selected object to the new view controller.
     }
+    */
 
 }
