@@ -3,6 +3,7 @@
     <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -282,7 +283,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="　エピソード一覧" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RRA-On-3Wc">
-                                <rect key="frame" x="0.0" y="294" width="375" height="36"/>
+                                <rect key="frame" x="0.0" y="351" width="375" height="36"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="tintColor" red="1" green="0.60662413989999997" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="30"/>
@@ -290,20 +291,30 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="UuH-f7-5ax">
-                                <rect key="frame" x="0.0" y="338" width="375" height="329"/>
+                                <rect key="frame" x="0.0" y="387" width="375" height="280"/>
                                 <color key="backgroundColor" systemColor="opaqueSeparatorColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="280" id="D18-im-3nA"/>
+                                    <constraint firstAttribute="width" constant="375" id="nvw-WC-Cfs"/>
+                                </constraints>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="EpisodeCell" rowHeight="70" id="ucQ-bC-Dt1">
-                                        <rect key="frame" x="0.0" y="44.5" width="375" height="70"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="EpisodeCell" rowHeight="100" id="ucQ-bC-Dt1">
+                                        <rect key="frame" x="0.0" y="44.5" width="375" height="100"/>
                                         <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="ucQ-bC-Dt1" id="NGn-8Y-gnx">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="70"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" restorationIdentifier="EpisodeCell" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="ucQ-bC-Dt1" id="NGn-8Y-gnx">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="100"/>
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="エピソード詳細&gt;&gt;" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="H66-zL-fcL">
+                                                    <rect key="frame" x="217" y="68" width="142" height="21"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" name="AccentColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" red="0.98653739689999997" green="0.92663198710000005" blue="0.83135610820000005" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                        <connections>
-                                            <segue destination="Wah-Ed-WPr" kind="show" id="CPR-hi-FvA"/>
-                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                                 <connections>
@@ -312,7 +323,7 @@
                                 </connections>
                             </tableView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Imq-03-zq9">
-                                <rect key="frame" x="306" y="297" width="53" height="31"/>
+                                <rect key="frame" x="310" y="354" width="53" height="31"/>
                                 <color key="backgroundColor" red="1" green="0.60662413989999997" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="53" id="1ql-n1-6Lk"/>
@@ -333,22 +344,21 @@
                         <color key="backgroundColor" red="0.94653230909999997" green="0.84082561730000005" blue="0.70193451640000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
                             <constraint firstItem="UuH-f7-5ax" firstAttribute="bottom" secondItem="RWR-Db-tpV" secondAttribute="bottom" id="7Sw-kc-tqE"/>
-                            <constraint firstItem="UuH-f7-5ax" firstAttribute="top" secondItem="Imq-03-zq9" secondAttribute="bottom" constant="10" id="8e8-px-ndD"/>
-                            <constraint firstItem="Imq-03-zq9" firstAttribute="leading" secondItem="RWR-Db-tpV" secondAttribute="leading" constant="306" id="A7b-zE-hqV"/>
+                            <constraint firstItem="UuH-f7-5ax" firstAttribute="top" secondItem="Imq-03-zq9" secondAttribute="bottom" constant="2" id="8e8-px-ndD"/>
+                            <constraint firstItem="Imq-03-zq9" firstAttribute="leading" secondItem="RWR-Db-tpV" secondAttribute="leading" constant="310" id="A7b-zE-hqV"/>
                             <constraint firstItem="UuH-f7-5ax" firstAttribute="leading" secondItem="RWR-Db-tpV" secondAttribute="leading" id="GJe-7u-2ep"/>
                             <constraint firstItem="UuH-f7-5ax" firstAttribute="trailing" secondItem="RWR-Db-tpV" secondAttribute="trailing" id="GYa-g6-Y8D"/>
-                            <constraint firstItem="UuH-f7-5ax" firstAttribute="top" secondItem="RRA-On-3Wc" secondAttribute="bottom" constant="8" symbolic="YES" id="LQ9-l3-eTh"/>
+                            <constraint firstItem="UuH-f7-5ax" firstAttribute="top" secondItem="RRA-On-3Wc" secondAttribute="bottom" id="LQ9-l3-eTh"/>
                             <constraint firstItem="RRA-On-3Wc" firstAttribute="leading" secondItem="RWR-Db-tpV" secondAttribute="leading" id="MEi-CH-g0p"/>
-                            <constraint firstItem="RRA-On-3Wc" firstAttribute="top" secondItem="RWR-Db-tpV" secondAttribute="top" constant="250" id="g3i-B7-fmM"/>
                             <constraint firstItem="RRA-On-3Wc" firstAttribute="trailing" secondItem="RWR-Db-tpV" secondAttribute="trailing" id="h4D-kV-LQW"/>
                             <constraint firstItem="RRA-On-3Wc" firstAttribute="centerX" secondItem="Fe0-Vy-TsP" secondAttribute="centerX" id="mbD-M2-JZr"/>
-                            <constraint firstItem="Imq-03-zq9" firstAttribute="top" secondItem="RWR-Db-tpV" secondAttribute="top" constant="253" id="shh-Cz-Q0P"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="U1D-th-zAs"/>
                     <connections>
                         <outlet property="Episode" destination="UuH-f7-5ax" id="hIG-wK-h2J"/>
                         <outlet property="EpisodeTableView" destination="UuH-f7-5ax" id="R16-ev-djI"/>
+                        <segue destination="Wah-Ed-WPr" kind="show" identifier="toPreviewEpisode" id="oEl-67-w4Z"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ccp-hg-sD6" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -1433,6 +1443,14 @@
                         </barButtonItem>
                     </navigationItem>
                     <size key="freeformSize" width="375" height="1500"/>
+                    <connections>
+                        <outlet property="人柄" destination="1WQ-uf-65f" id="z6F-BQ-8Ei"/>
+                        <outlet property="動機" destination="B5O-bk-K15" id="0AP-4J-ceF"/>
+                        <outlet property="取り組みと結果" destination="jqt-sD-le2" id="IN3-v4-drX"/>
+                        <outlet property="学び" destination="zCC-vX-Jtv" id="Rv0-OZ-lLo"/>
+                        <outlet property="目標と困難" destination="lIT-Tt-s73" id="C3d-6p-v5x"/>
+                        <outlet property="結論" destination="dGE-0r-otU" id="w7T-bq-Hvw"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aUf-VS-TEk" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -1731,9 +1749,12 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="CPR-hi-FvA"/>
+        <segue reference="oEl-67-w4Z"/>
     </inferredMetricsTieBreakers>
     <resources>
+        <namedColor name="AccentColor">
+            <color red="0.0" green="0.46000000000000002" blue="0.89000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

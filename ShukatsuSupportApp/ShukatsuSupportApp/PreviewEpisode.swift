@@ -9,9 +9,10 @@ import UIKit
 
 class PreviewEpisode: UIViewController {
 
-    var Episode: EpisodeInfo!
+//    var Episode: EpisodeInfo!
     
     let edit = EpisodeDetailViewController()
+    let graph = GraphViewController()
    
     @IBOutlet weak var タイトル : UITextField!
     @IBOutlet weak var 日付: UILabel!
@@ -24,24 +25,22 @@ class PreviewEpisode: UIViewController {
     @IBOutlet weak var 改善点: UITextView!
     @IBOutlet weak var 学んだこと: UITextView!
     
-
+    var text_タイトル:String = ""
+    var text_具体的に何をした: String = ""
+    var text_目標と困難: String = ""
+    var text_工夫した点: String = ""
+    var text_取り組んだ結果: String = ""
+    var text_活かせた長所: String = ""
+    var text_改善点: String = ""
+    var text_学んだこと: String = ""
+    var text_評価: String = ""
+    var text_日付: String = ""
+    
 //    let realm = try! Realm()
     override func viewDidLoad() {
         super.viewDidLoad()
         
-    }
-    override func viewWillAppear(_ animated: Bool) {
-//        edit.removeUserDefaults()
-        
-//        let 保存済みタイトル = UserDefaults.standard.string(forKey: "タイトルキー")
-//        let 保存済み具体的 = UserDefaults.standard.string(forKey: "具体的キー")
-//        let 保存済み目標 = UserDefaults.standard.string(forKey: "目標キー")
-//        let 保存済み工夫 = UserDefaults.standard.string(forKey: "工夫キー")
-//        let 保存済み結果 = UserDefaults.standard.string(forKey: "結果キー")
-//        let 保存済み長所 = UserDefaults.standard.string(forKey: "長所キー")
-//        let 保存済み改善点 = UserDefaults.standard.string(forKey: "改善点キー")
-//        let 保存済み学んだこと = UserDefaults.standard.string(forKey: "学んだことキー")
-        タイトル.text = ""
+        タイトル.text = text_タイトル
         日付.text = ""
         評価.text=""
         具体的に何をした.text  = ""
@@ -51,7 +50,8 @@ class PreviewEpisode: UIViewController {
         活かせた長所.text  = ""
         改善点.text  = ""
         学んだこと.text  = ""
-        
+    }
+    override func viewWillAppear(_ animated: Bool) {
         
     }
 

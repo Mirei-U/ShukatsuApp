@@ -27,4 +27,11 @@ class User: Object {
     @objc dynamic var userなぜなぜ3 = ""
     @objc dynamic var userなぜなぜ4 = ""
     @objc dynamic var userなぜなぜ5 = ""
+    
+    @objc dynamic var user文章作成_結論 = ""
+    @objc dynamic var user文章作成_動機 = ""
+    @objc dynamic var user文章作成_目標と困難 = ""
+    @objc dynamic var user文章作成_取り組みと結果 = ""
+    @objc dynamic var user文章作成_人柄 = ""
+    @objc dynamic var user文章作成_学び = ""
 }

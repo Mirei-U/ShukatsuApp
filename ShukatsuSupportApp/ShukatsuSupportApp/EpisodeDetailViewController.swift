@@ -35,6 +35,8 @@ class EpisodeDetailViewController: UIViewController, UIPickerViewDelegate, UIPic
     
     //Realmを使うときのお決まりのやつ
     let realm = try! Realm()
+    //日付でソート
+    let results = try! Realm().objects(User.self).sorted(byKeyPath: "user日付")
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -57,7 +59,6 @@ class EpisodeDetailViewController: UIViewController, UIPickerViewDelegate, UIPic
         日付.inputView = datePicker
         日付.inputAccessoryView = toolbar
         //
-        選択肢.append("")
         選択肢.append("5: 満足")
         選択肢.append("4: 少し満足")
         選択肢.append("3: 普通")
@@ -125,7 +126,8 @@ class EpisodeDetailViewController: UIViewController, UIPickerViewDelegate, UIPic
             showAlert()
         }else{
         //グラフ画面に戻る
-        self.navigationController?.popToViewController(navigationController!.viewControllers[1], animated: true)
+        self.navigationController?.popToViewController(navigationController!.viewControllers[0], animated: true)
+//        self.navigationController?.popToViewController(navigationController!.viewControllers[1], animated: true)
         print("⏪戻る")
         let user = User()
         user.userタイトル = タイトル.text!
@@ -172,6 +174,7 @@ class EpisodeDetailViewController: UIViewController, UIPickerViewDelegate, UIPic
         try! realm.write {
 //            realm.delete(realm.objects(User.self))
             realm.add(user)
+            print("results: \(results)")
         }
     }
        

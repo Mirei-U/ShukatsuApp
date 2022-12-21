@@ -28,6 +28,8 @@
 		CBAF3BF12933E23900B7A1DE /* EditEpisode.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBAF3BF02933E23900B7A1DE /* EditEpisode.swift */; };
 		CBB682CE291DEC8A001A1C05 /* EpisodeDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBB682CD291DEC8A001A1C05 /* EpisodeDetailViewController.swift */; };
 		CBBDA7232918D507006EC35C /* ESwritingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBBDA7222918D507006EC35C /* ESwritingViewController.swift */; };
+		CBCD1517294F0C1E00D5C39B /* EpisodeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBCD1515294F0C1E00D5C39B /* EpisodeTableViewCell.swift */; };
+		CBCD1518294F0C1E00D5C39B /* EpisodeTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CBCD1516294F0C1E00D5C39B /* EpisodeTableViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -73,6 +75,8 @@
 		CBAF3BF02933E23900B7A1DE /* EditEpisode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditEpisode.swift; sourceTree = "<group>"; };
 		CBB682CD291DEC8A001A1C05 /* EpisodeDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodeDetailViewController.swift; sourceTree = "<group>"; };
 		CBBDA7222918D507006EC35C /* ESwritingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ESwritingViewController.swift; sourceTree = "<group>"; };
+		CBCD1515294F0C1E00D5C39B /* EpisodeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodeTableViewCell.swift; sourceTree = "<group>"; };
+		CBCD1516294F0C1E00D5C39B /* EpisodeTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EpisodeTableViewCell.xib; sourceTree = "<group>"; };
 		EE595CE41639B4D0280B9A20 /* Pods_ShukatsuSupportApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ShukatsuSupportApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -162,6 +166,8 @@
 				CB226245290C1CB4003B1F1C /* Assets.xcassets */,
 				CB226247290C1CB4003B1F1C /* LaunchScreen.storyboard */,
 				CB22624A290C1CB4003B1F1C /* Info.plist */,
+				CBCD1515294F0C1E00D5C39B /* EpisodeTableViewCell.swift */,
+				CBCD1516294F0C1E00D5C39B /* EpisodeTableViewCell.xib */,
 			);
 			path = ShukatsuSupportApp;
 			sourceTree = "<group>";
@@ -296,6 +302,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CB226249290C1CB4003B1F1C /* LaunchScreen.storyboard in Resources */,
+				CBCD1518294F0C1E00D5C39B /* EpisodeTableViewCell.xib in Resources */,
 				CB226246290C1CB4003B1F1C /* Assets.xcassets in Resources */,
 				CB226244290C1CAE003B1F1C /* Main.storyboard in Resources */,
 			);
@@ -365,6 +372,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CBAF3BE92933E08800B7A1DE /* GraphViewController.swift in Sources */,
+				CBCD1517294F0C1E00D5C39B /* EpisodeTableViewCell.swift in Sources */,
 				CB22626D290C2167003B1F1C /* TOPViewController.swift in Sources */,
 				CB1F75B4293DC4BD002AF86B /* EditWritingViewController.swift in Sources */,
 				CBAF3BEF2933E1F900B7A1DE /* PreviewEpisode.swift in Sources */,
