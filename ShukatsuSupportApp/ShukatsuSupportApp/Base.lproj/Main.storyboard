@@ -19,18 +19,16 @@
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ePb-js-f8P">
                                 <rect key="frame" x="37" y="74" width="301" height="100.5"/>
-                                <color key="backgroundColor" red="0.94653230909999997" green="0.84082561730000005" blue="0.70193451640000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <color key="backgroundColor" systemColor="systemYellowColor"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="301" id="KhH-uE-ABA"/>
                                     <constraint firstAttribute="height" constant="100.5" id="Qdv-FA-jqi"/>
                                 </constraints>
-                                <color key="tintColor" red="0.0" green="0.1541550159" blue="0.1097475067" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="tinted" title="">
-                                    <color key="baseBackgroundColor" red="0.94653230909999997" green="0.84082561730000005" blue="0.70193451640000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                </buttonConfiguration>
+                                <buttonConfiguration key="configuration" style="tinted"/>
                                 <connections>
                                     <action selector="Button:" destination="Xmv-tJ-vuT" eventType="touchUpInside" id="B9l-2u-76l"/>
+                                    <action selector="グラフ作成タップ:" destination="BYZ-38-t0r" eventType="touchUpInside" id="LdH-uz-d3P"/>
                                     <segue destination="REk-He-GPB" kind="show" id="5eX-L2-Ayp"/>
                                 </connections>
                             </button>
@@ -45,6 +43,7 @@
                                 <buttonConfiguration key="configuration" style="tinted"/>
                                 <connections>
                                     <action selector="Button:" destination="Xmv-tJ-vuT" eventType="touchUpInside" id="XBv-Ay-fpN"/>
+                                    <action selector="なぜなぜタップ:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Rh0-lR-eP9"/>
                                     <segue destination="vx6-xK-hSd" kind="show" identifier="toNazeNaze" id="R80-Cy-DPx"/>
                                 </connections>
                             </button>
@@ -59,6 +58,7 @@
                                 <buttonConfiguration key="configuration" style="tinted"/>
                                 <connections>
                                     <action selector="Button:" destination="Xmv-tJ-vuT" eventType="touchUpInside" id="jc1-95-VeS"/>
+                                    <action selector="文章作成タップ:" destination="BYZ-38-t0r" eventType="touchUpInside" id="XuF-iY-xpU"/>
                                     <segue destination="vrb-XI-LDV" kind="show" identifier="toWriting" id="dGx-ea-9lt"/>
                                 </connections>
                             </button>
@@ -100,7 +100,7 @@
                             </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="k03-ct-A0L" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="56N-LR-0ng"/>
                             <constraint firstItem="fHE-7X-SmV" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="top" id="AEm-Nb-vlr"/>
@@ -120,6 +120,11 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="C6y-oy-DD0"/>
+                    <connections>
+                        <outlet property="なぜなぜ分析" destination="JgR-oY-SkE" id="36U-Vc-c9Q"/>
+                        <outlet property="グラフ作成" destination="ePb-js-f8P" id="c0e-up-ho0"/>
+                        <outlet property="文章作成" destination="rFI-0s-FLL" id="0Of-DR-Qaq"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
                 <exit id="Xmv-tJ-vuT" userLabel="Exit" sceneMemberID="exit"/>
@@ -2156,6 +2161,9 @@
         </systemColor>
         <systemColor name="systemMintColor">
             <color red="0.0" green="0.7803921568627451" blue="0.74509803921568629" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemYellowColor">
+            <color red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
