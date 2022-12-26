@@ -10,6 +10,7 @@
 		B71587471DCBD28B1A9DD0B4 /* Pods_ShukatsuSupportApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EE595CE41639B4D0280B9A20 /* Pods_ShukatsuSupportApp.framework */; };
 		CB1F75B2293D7B92002AF86B /* NazeNazeQuestionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB1F75B1293D7B92002AF86B /* NazeNazeQuestionViewController.swift */; };
 		CB1F75B4293DC4BD002AF86B /* EditWritingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB1F75B3293DC4BD002AF86B /* EditWritingViewController.swift */; };
+		CB1FFCFC2958C16E00873851 /* UpdateEpisodeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB1FFCFB2958C16E00873851 /* UpdateEpisodeViewController.swift */; };
 		CB22623D290C1CAE003B1F1C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB22623C290C1CAE003B1F1C /* AppDelegate.swift */; };
 		CB22623F290C1CAE003B1F1C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB22623E290C1CAE003B1F1C /* SceneDelegate.swift */; };
 		CB226241290C1CAE003B1F1C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB226240290C1CAE003B1F1C /* ViewController.swift */; };
@@ -55,6 +56,7 @@
 		AA434E51F90DF281F9A32D17 /* Pods-ShukatsuSupportApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ShukatsuSupportApp.release.xcconfig"; path = "Target Support Files/Pods-ShukatsuSupportApp/Pods-ShukatsuSupportApp.release.xcconfig"; sourceTree = "<group>"; };
 		CB1F75B1293D7B92002AF86B /* NazeNazeQuestionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NazeNazeQuestionViewController.swift; sourceTree = "<group>"; };
 		CB1F75B3293DC4BD002AF86B /* EditWritingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditWritingViewController.swift; sourceTree = "<group>"; };
+		CB1FFCFB2958C16E00873851 /* UpdateEpisodeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateEpisodeViewController.swift; sourceTree = "<group>"; };
 		CB226239290C1CAE003B1F1C /* ShukatsuSupportApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ShukatsuSupportApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CB22623C290C1CAE003B1F1C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CB22623E290C1CAE003B1F1C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -129,6 +131,7 @@
 		CB226230290C1CAE003B1F1C = {
 			isa = PBXGroup;
 			children = (
+				CB1FFCFB2958C16E00873851 /* UpdateEpisodeViewController.swift */,
 				CB22623B290C1CAE003B1F1C /* ShukatsuSupportApp */,
 				CB226252290C1CB4003B1F1C /* ShukatsuSupportAppTests */,
 				CB22625C290C1CB4003B1F1C /* ShukatsuSupportAppUITests */,
@@ -379,6 +382,7 @@
 				CB22626D290C2167003B1F1C /* TOPViewController.swift in Sources */,
 				CB1F75B4293DC4BD002AF86B /* EditWritingViewController.swift in Sources */,
 				CBAF3BEF2933E1F900B7A1DE /* PreviewEpisode.swift in Sources */,
+				CB1FFCFC2958C16E00873851 /* UpdateEpisodeViewController.swift in Sources */,
 				CBAF3BF12933E23900B7A1DE /* EditEpisode.swift in Sources */,
 				CB226241290C1CAE003B1F1C /* ViewController.swift in Sources */,
 				CB2677D529531F98002A0372 /* EpisodeUpdateViewController.swift in Sources */,

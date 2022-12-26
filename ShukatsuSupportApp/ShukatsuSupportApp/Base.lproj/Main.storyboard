@@ -721,7 +721,7 @@
                     <navigationItem key="navigationItem" title="エピソード閲覧" id="uhk-2F-aS4">
                         <barButtonItem key="rightBarButtonItem" title="編集" id="qz5-wk-q5K">
                             <connections>
-                                <action selector="編集ぼたん:" destination="Wah-Ed-WPr" id="tmv-op-sHA"/>
+                                <action selector="編集ボタン:" destination="Wah-Ed-WPr" id="aI8-vt-YRh"/>
                                 <segue destination="Cdl-g1-6xE" kind="show" id="RNg-dW-gye"/>
                             </connections>
                         </barButtonItem>
@@ -737,6 +737,7 @@
                         <outlet property="日付" destination="ASP-bS-ATq" id="FnO-iW-fGQ"/>
                         <outlet property="活かせた長所" destination="74c-hL-MQ7" id="Cgy-sE-NnC"/>
                         <outlet property="目標と困難" destination="WwU-hd-MLB" id="dI0-Pq-r08"/>
+                        <outlet property="編集する" destination="qz5-wk-q5K" id="RlL-NA-WyO"/>
                         <outlet property="評価" destination="kpv-L7-hI0" id="1gy-GN-0sf"/>
                         <segue destination="ysO-JD-tWU" kind="show" identifier="toEpisodeUpdate" id="vyt-vH-j78"/>
                     </connections>
@@ -2117,27 +2118,27 @@
                     <navigationItem key="navigationItem" title="エピソード編集" id="1pY-UG-Ipg">
                         <barButtonItem key="rightBarButtonItem" title="保存" id="LeX-Ea-ttg">
                             <connections>
-                                <action selector="保存:" destination="ysO-JD-tWU" id="iu3-NS-SYo"/>
+                                <action selector="更新を保存:" destination="ysO-JD-tWU" id="G89-Rm-Gwz"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
                     <size key="freeformSize" width="376" height="2000"/>
                     <connections>
-                        <outlet property="タイトル" destination="zi0-2X-bVl" id="bHn-zu-QPR"/>
-                        <outlet property="具体的に何をした" destination="iNb-NA-Mv7" id="LYD-TN-tAz"/>
-                        <outlet property="取り組んだ結果" destination="zEF-eY-Mwo" id="bLO-TK-2og"/>
-                        <outlet property="学んだこと" destination="Wdu-3j-Cmh" id="ovN-VG-T6x"/>
-                        <outlet property="工夫した点" destination="F4R-m9-6TP" id="f1D-zN-geD"/>
-                        <outlet property="改善点" destination="EoY-L4-4Ef" id="skN-xh-WPr"/>
-                        <outlet property="日付" destination="ITN-Wx-V9T" id="DjY-kj-dVX"/>
-                        <outlet property="活かせた長所" destination="c7G-JK-rI0" id="7Sx-in-MqR"/>
-                        <outlet property="目標と困難" destination="cw8-8M-AxN" id="qi1-Jc-kMn"/>
-                        <outlet property="評価点" destination="oxf-Mt-PRZ" id="8Kx-eq-AKQ"/>
+                        <outlet property="更新_タイトル" destination="zi0-2X-bVl" id="rrB-eI-jfw"/>
+                        <outlet property="更新_具体的に何をした" destination="iNb-NA-Mv7" id="KJV-jM-k6p"/>
+                        <outlet property="更新_取り組んだ結果" destination="zEF-eY-Mwo" id="oCK-XY-69n"/>
+                        <outlet property="更新_学んだこと" destination="Wdu-3j-Cmh" id="MWT-9p-2BO"/>
+                        <outlet property="更新_工夫した点" destination="F4R-m9-6TP" id="fT2-XW-WCI"/>
+                        <outlet property="更新_改善点" destination="EoY-L4-4Ef" id="GxL-cX-wsi"/>
+                        <outlet property="更新_日付" destination="ITN-Wx-V9T" id="bpK-CC-wd2"/>
+                        <outlet property="更新_活かせた長所" destination="c7G-JK-rI0" id="yKm-UM-9Aw"/>
+                        <outlet property="更新_目標と困難" destination="cw8-8M-AxN" id="HCN-TN-s8Q"/>
+                        <outlet property="更新_評価" destination="oxf-Mt-PRZ" id="xfl-8f-C7m"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PB8-bw-xO1" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4781" y="-274"/>
+            <point key="canvasLocation" x="4780.8000000000002" y="-274.36281859070465"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>

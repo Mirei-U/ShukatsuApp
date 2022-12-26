@@ -1,4 +1,4 @@
-//
+////
 //  EpisodeDetailViewController.swift
 //  ShukatsuSupportApp
 //
@@ -10,37 +10,31 @@ import RealmSwift
 import SwiftUI
 
 
-let YEAR_TO_DATE = Date()
-let DATE_FORMATTER = DateFormatter()
-var DATE = ""
+let Update_YEAR_TO_DATE = Date()
+let Update_DATE_FORMATTER = DateFormatter()
+var Update_DATE = ""
 
-protocol EditViewControllerDelegate{
+protocol UpdateViewControllerDelegate{
     func editDidFinished(modalText: String?)
 }
 
-class EpisodeDetailViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource, UITextFieldDelegate, UITextViewDelegate{
-
-    @IBOutlet var タイトル : UITextField!
-    @IBOutlet var 日付: UITextField!
-    @IBOutlet var 評価点: UITextField!
-    @IBOutlet var 具体的に何をした: UITextView!
-    @IBOutlet var 目標と困難: UITextView!
-    @IBOutlet var 工夫した点: UITextView!
-    @IBOutlet var 取り組んだ結果: UITextView!
-    @IBOutlet var 活かせた長所: UITextView!
-    @IBOutlet var 改善点: UITextView!
-    @IBOutlet var 学んだこと: UITextView!
+class UpdateEpisodeViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource, UITextFieldDelegate, UITextViewDelegate{
     
     @IBOutlet var 更新_タイトル: UITextField!
     @IBOutlet var 更新_日付: UITextField!
     @IBOutlet var 更新_評価: UITextField!
     @IBOutlet var 更新_具体的に何をした: UITextView!
-    @IBOutlet var 更新_目標と困難: UITextView!
-    @IBOutlet var 更新_工夫した点: UITextView!
-    @IBOutlet var 更新_取り組んだ結果: UITextView!
-    @IBOutlet var 更新_活かせた長所: UITextView!
-    @IBOutlet var 更新_改善点: UITextView!
-    @IBOutlet var 更新_学んだこと: UITextView!
+//    @IBOutlet var 更新_日付: UITextField!
+//    @IBOutlet var 更新_評価: UITextField!
+//    @IBOutlet var 更新_具体的に何をした: UITextView!
+//    @IBOutlet var 更新_目標と困難: UITextView!
+//    @IBOutlet var 更新_工夫した点: UITextView!
+//    @IBOutlet var 更新_取り組んだ結果: UITextView!
+//    @IBOutlet var 更新_活かせた長所: UITextView!
+//    @IBOutlet var 更新_改善点: UITextView!
+//    @IBOutlet var 更新_学んだこと: UITextView!
+    
+    
     
 //    遷移元から受け取る値を設置
     var text_タイトル:String = ""
@@ -54,6 +48,7 @@ class EpisodeDetailViewController: UIViewController, UIPickerViewDelegate, UIPic
     var text_評価: String = ""
     var text_日付: String = ""
 
+    
     var 選択肢: [String] = []
     weak var pickerView: UIPickerView?
     
@@ -65,16 +60,12 @@ class EpisodeDetailViewController: UIViewController, UIPickerViewDelegate, UIPic
     let results = try! Realm().objects(User.self).sorted(byKeyPath: "user日付")
     
     //編集可能にするための
-    var delegate: EditViewControllerDelegate! = nil
-    
-    @IBAction func tapButton(_ sender: Any) {
-        delegate.editDidFinished(modalText: タイトル.text)
-        dismiss(animated: true, completion: nil)
-    }
+//    var delegate: UpdateEpisodeViewController! = nil
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        初期値入力()
         //日付
         // DateFormatter を使用して書式とロケールを指定する
         DATE_FORMATTER.locale = Locale(identifier: "ja_JP")//日本語にするため
@@ -84,15 +75,15 @@ class EpisodeDetailViewController: UIViewController, UIPickerViewDelegate, UIPic
         datePicker.timeZone = NSTimeZone.local
         datePicker.locale = Locale(identifier: "ja_JP")//日本語にするため
         datePicker.preferredDatePickerStyle = .wheels//ドラムロール
-        日付.inputView = datePicker
+        更新_日付.inputView = datePicker
         // 決定バーの生成
         let toolbar = UIToolbar(frame: CGRect(x: 0, y: 0, width: view.frame.size.width, height: 35))
         let spacelItem = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: self, action: nil)
         let doneItem = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(done))
         toolbar.setItems([spacelItem, doneItem], animated: true)
         // インプットビュー設定(紐づいているUITextfieldへ代入)
-        日付.inputView = datePicker
-        日付.inputAccessoryView = toolbar
+        更新_日付.inputView = datePicker
+        更新_日付.inputAccessoryView = toolbar
         //
         選択肢.append("5: 満足")
         選択肢.append("4: 少し満足")
@@ -104,9 +95,9 @@ class EpisodeDetailViewController: UIViewController, UIPickerViewDelegate, UIPic
         pv.delegate = self
         pv.dataSource = self
 
-        評価点.delegate = self
-        評価点.inputAssistantItem.leadingBarButtonGroups = []
-        評価点.inputView = pv
+        更新_評価.delegate = self
+        更新_評価.inputAssistantItem.leadingBarButtonGroups = []
+        更新_評価.inputView = pv
         self.pickerView = pv
 
         let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(self.dismissKeyboard))
@@ -118,37 +109,72 @@ class EpisodeDetailViewController: UIViewController, UIPickerViewDelegate, UIPic
         let userData = realm.objects(User.self)
         print("🟥全てのデータ\(userData)")
         print(Realm.Configuration.defaultConfiguration.fileURL!)
-        print("🟥EpisodeEditのtext_タイトル: \(text_タイトル)")
-//        更新画面
-        タイトル.text! = text_タイトル
-        タイトル.delegate = self
-        タイトル.borderStyle = .roundedRect
-        self.view.addSubview(タイトル)
-        print("🟥EpisodeEditのタイトル.text: \(タイトル.text!)")
-//        更新_日付.text! = text_日付
-//        更新_評価.text! = text_評価
-//        更新_具体的に何をした.text! = text_具体的に何をした
-//        更新_目標と困難.text! = text_目標と困難
-//        更新_工夫した点.text! = text_工夫した点
-//        更新_取り組んだ結果.text! = text_取り組んだ結果
-//        更新_活かせた長所.text! = text_活かせた長所
-//        更新_改善点.text! = text_改善点
-//        更新_学んだこと.text! = text_学んだこと
+        
+        //更新画面
+        更新_タイトル.text! = text_タイトル
+        更新_タイトル.delegate = self
+        self.view.addSubview(更新_タイトル)
+        
+        print("🟥UpdateEpisodeViewController_更新_タイトル: \(更新_タイトル.text)")
     }
-//    /*
-//      UITextFieldが編集された直前に呼ばれる
-//      */
-//     func textFieldDidBeginEditing(_ textField: UITextField) {
-//         print("textFieldDidBeginEditing: \(textField.text!)")
-//     }
-//
-//     /*
-//      UITextFieldが編集された直後に呼ばれる
-//      */
-//     func textFieldDidEndEditing(_ textField: UITextField) {
-//         print("textFieldDidEndEditing: \(textField.text!)")
-//     }
-    
+    func 初期値入力(){
+        //=================
+        //        更新画面
+                更新_タイトル.text! = text_タイトル
+                更新_タイトル.delegate = self
+                self.view.addSubview(更新_タイトル)
+                
+                更新_日付.text! = text_日付
+        //        更新_日付.delegate = self
+        //        self.view.addSubview(更新_日付)
+                
+                更新_評価.text! = text_評価
+        //        更新_評価.delegate = self
+        //        self.view.addSubview(更新_評価)
+                
+                更新_具体的に何をした.text! = text_具体的に何をした
+        //        更新_具体的に何をした.delegate = self
+        //        self.view.addSubview(更新_具体的に何をした)
+                
+        //        更新_目標と困難.text! = text_目標と困難
+        ////        更新_目標と困難.delegate = self
+        ////        self.view.addSubview(更新_目標と困難)
+        //
+        //        更新_工夫した点.text! = text_工夫した点
+        ////        更新_工夫した点.delegate = self
+        ////        self.view.addSubview(更新_工夫した点)
+        //
+        //        更新_取り組んだ結果.text! = text_取り組んだ結果
+        ////        更新_取り組んだ結果.delegate = self
+        ////        self.view.addSubview(更新_取り組んだ結果)
+        //
+        //        更新_活かせた長所.text! = text_活かせた長所
+        ////        更新_活かせた長所.delegate = self
+        ////        self.view.addSubview(更新_活かせた長所)
+        //
+        //        更新_改善点.text! = text_改善点
+        ////        更新_改善点.delegate = self
+        ////        self.view.addSubview(更新_改善点)
+        //
+        //        更新_学んだこと.text! = text_学んだこと
+        //        更新_学んだこと.delegate = self
+        //        self.view.addSubview(更新_学んだこと)
+        //=================
+    }
+    /*
+      UITextFieldが編集された直前に呼ばれる
+      */
+     func textFieldDidBeginEditing(_ textField: UITextField) {
+         print("textFieldDidBeginEditing: \(textField.text!)")
+     }
+
+     /*
+      UITextFieldが編集された直後に呼ばれる
+      */
+     func textFieldDidEndEditing(_ textField: UITextField) {
+         print("textFieldDidEndEditing: \(textField.text!)")
+     }
+
     //評価点PickerView
     //↓↓↓↓
         @objc func dismissKeyboard() {
@@ -168,17 +194,17 @@ class EpisodeDetailViewController: UIViewController, UIPickerViewDelegate, UIPic
         }
 
         func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-            評価点.text = 選択肢[row]
+            更新_評価.text = 選択肢[row]
         }
     //↑↑↑↑
     
     // UIDatePickerのDoneを押したらTextFieldもそれに変わる。
     @objc func done() {
-        日付.endEditing(true)
+        更新_日付.endEditing(true)
         //(from: datePicker.date))を指定してあげることで
         //datePickerで指定した日付が表示される
         DATE = DATE_FORMATTER.string(from: datePicker.date)
-        日付.text = DATE
+        更新_日付.text = DATE
     }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -190,7 +216,7 @@ class EpisodeDetailViewController: UIViewController, UIPickerViewDelegate, UIPic
     }
     @IBAction func 保存(_ sender: Any) {
         
-        if(タイトル.text! == ""){
+        if(更新_タイトル.text! == ""){
             showAlert()
         }else{
         //グラフ画面に戻る
@@ -198,17 +224,17 @@ class EpisodeDetailViewController: UIViewController, UIPickerViewDelegate, UIPic
 //        self.navigationController?.popToViewController(navigationController!.viewControllers[1], animated: true)
         print("⏪戻る")
         let user = User()
-        user.userタイトル = タイトル.text!
-        user.user日付 = 日付.text!
-        user.user具体的に何をした = 具体的に何をした.text!
-        user.user目標と困難 = 目標と困難.text!
-        user.user工夫した点 = 工夫した点.text!
-        user.user取り組んだ結果 = 取り組んだ結果.text!
-        user.user活かせた長所 = 活かせた長所.text!
-        user.user改善点 = 改善点.text!
-        user.user学んだこと = 学んだこと.text!
+        user.userタイトル = 更新_タイトル.text!
+        user.user日付 = 更新_日付.text!
+        user.user具体的に何をした = 更新_具体的に何をした.text!
+//        user.user目標と困難 = 目標と困難.text!
+//        user.user工夫した点 = 工夫した点.text!
+//        user.user取り組んだ結果 = 取り組んだ結果.text!
+//        user.user活かせた長所 = 活かせた長所.text!
+//        user.user改善点 = 改善点.text!
+//        user.user学んだこと = 学んだこと.text!
         
-        switch 評価点.text{
+        switch 更新_評価.text{
         case "5: 満足":
             user.user評価点 = "5"
 //            graph.評価点追加(評価: 5)
@@ -251,11 +277,5 @@ class EpisodeDetailViewController: UIViewController, UIPickerViewDelegate, UIPic
             alertController.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
             present(alertController, animated: true, completion: nil)
     }
-
-
-        
-        //テーブルをリセット
-//        tableView.reloadData()
-        
     }
 }

@@ -7,7 +7,7 @@
 
 import UIKit
 
-class PreviewEpisode: UIViewController {
+class PreviewEpisode: UIViewController, EditViewControllerDelegate {
 
 //    var Episode: EpisodeInfo!
     
@@ -24,6 +24,7 @@ class PreviewEpisode: UIViewController {
     @IBOutlet weak var 活かせた長所: UITextView!
     @IBOutlet weak var 改善点: UITextView!
     @IBOutlet weak var 学んだこと: UITextView!
+    @IBOutlet weak var 編集する: UIBarButtonItem!
     
     var text_タイトル:String = ""
     var text_具体的に何をした: String = ""
@@ -36,6 +37,7 @@ class PreviewEpisode: UIViewController {
     var text_評価: String = ""
     var text_日付: String = ""
     
+
 //    let realm = try! Realm()
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -50,10 +52,35 @@ class PreviewEpisode: UIViewController {
         活かせた長所.text  = text_活かせた長所
         改善点.text  = text_改善点
         学んだこと.text  = text_学んだこと
-        print("print: \(学んだこと.text)")
-    }
-    override func viewWillAppear(_ animated: Bool) {
-        
     }
 
+    override func didReceiveMemoryWarning() {
+            super.didReceiveMemoryWarning()
+            // Dispose of any resources that can be recreated.
+        }
+    
+    
+    @IBAction func tapEditButton(sender: UIButton) {
+        let view = storyboard?.instantiateViewController(withIdentifier: "editViewController") as! EpisodeDetailViewController
+        view.タイトル = タイトル
+        view.delegate = self
+        present(view, animated: true, completion: nil)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+                let DetailVC: EpisodeDetailViewController = (segue.destination as? EpisodeDetailViewController)!
+                DetailVC.text_タイトル = タイトル.text!
+                DetailVC.text_具体的に何をした = 具体的に何をした.text!
+                DetailVC.text_目標と困難 = 目標と困難.text!
+                DetailVC.text_工夫した点 = 工夫した点.text!
+                DetailVC.text_取り組んだ結果 = 取り組んだ結果.text!
+                DetailVC.text_活かせた長所 = 活かせた長所.text!
+                DetailVC.text_改善点 = 改善点.text!
+                DetailVC.text_学んだこと = 学んだこと.text!
+                DetailVC.text_日付 = 日付.text!
+                DetailVC.text_評価 = 評価.text!
+    }
+    func editDidFinished(modalText text: String?){
+        タイトル.text = text
+    }
 }
