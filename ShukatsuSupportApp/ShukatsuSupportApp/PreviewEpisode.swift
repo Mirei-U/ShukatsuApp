@@ -68,7 +68,7 @@ class PreviewEpisode: UIViewController, EditViewControllerDelegate {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-                let DetailVC: EpisodeDetailViewController = (segue.destination as? EpisodeDetailViewController)!
+                let DetailVC: EditEpisode = (segue.destination as? EditEpisode)!
                 DetailVC.text_タイトル = タイトル.text!
                 DetailVC.text_具体的に何をした = 具体的に何をした.text!
                 DetailVC.text_目標と困難 = 目標と困難.text!

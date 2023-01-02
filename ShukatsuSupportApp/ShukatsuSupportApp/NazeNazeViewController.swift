@@ -20,6 +20,13 @@ class NazeNazeViewController: UIViewController,UITableViewDelegate,UITableViewDa
     @IBOutlet var EpisodeTableView: UITableView!
     @IBOutlet weak var NazeNazeLabel: UILabel!
     
+    var タイトル: String = ""
+    var なぜなぜ1:String = ""
+    var なぜなぜ2:String = ""
+    var なぜなぜ3:String = ""
+    var なぜなぜ4:String = ""
+    var なぜなぜ5:String = ""
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
@@ -47,6 +54,27 @@ class NazeNazeViewController: UIViewController,UITableViewDelegate,UITableViewDa
         let userData = edit.realm.objects(User.self)
         return userData.count
     }
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath){
+        
+        let userData = edit.realm.objects(User.self)
+        タイトル = userData[indexPath.row].userタイトル
+        なぜなぜ1 = userData[indexPath.row].userなぜなぜ1
+        なぜなぜ2 = userData[indexPath.row].userなぜなぜ2
+        なぜなぜ3 = userData[indexPath.row].userなぜなぜ3
+        なぜなぜ4 = userData[indexPath.row].userなぜなぜ4
+        なぜなぜ5 = userData[indexPath.row].userなぜなぜ5
+        performSegue(withIdentifier: "toNazeNaze", sender: nil)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let NazeNazeVC: NazeNazeQuestionViewController = (segue.destination as? NazeNazeQuestionViewController)!
+        NazeNazeVC.text_タイトル = タイトル
+        NazeNazeVC.text_なぜなぜ1 = なぜなぜ1
+        NazeNazeVC.text_なぜなぜ2 = なぜなぜ2
+        NazeNazeVC.text_なぜなぜ3 = なぜなぜ3
+        NazeNazeVC.text_なぜなぜ4 = なぜなぜ4
+        NazeNazeVC.text_なぜなぜ5 = なぜなぜ5
+    }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 
@@ -55,7 +83,7 @@ class NazeNazeViewController: UIViewController,UITableViewDelegate,UITableViewDa
         cell.textLabel!.text = "[タイトル：\(userData[indexPath.row].userタイトル)]"
         return cell
     }
-    
+
     func displayChart(data: [Int]) {
             // グラフの範囲を指定する
             chartView = LineChartView(frame: CGRect(x: 0, y: 150, width: view.frame.width, height: 230))

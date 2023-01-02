@@ -161,9 +161,6 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" red="0.90787941217422485" green="0.96619218587875366" blue="0.99567443132400513" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <connections>
-                                            <segue destination="I4j-5N-ogm" kind="show" id="3uE-Ru-Jz2"/>
-                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                                 <connections>
@@ -199,6 +196,7 @@
                     <connections>
                         <outlet property="EpisodeTableView" destination="M8Z-mL-nI9" id="hQl-GF-eED"/>
                         <outlet property="NazeNazeLabel" destination="DFm-rq-Ean" id="ipg-Wh-Wev"/>
+                        <segue destination="I4j-5N-ogm" kind="show" identifier="toNazeNaze" id="Jol-ta-Ib2"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1wr-nB-F6b" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -341,7 +339,7 @@
                                     <color key="titleColor" systemColor="secondarySystemBackgroundColor"/>
                                 </state>
                                 <connections>
-                                    <segue destination="Wah-Ed-WPr" kind="show" id="DW2-kq-Vic"/>
+                                    <segue destination="Cdl-g1-6xE" kind="show" id="QXw-Ud-V7e"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -375,11 +373,11 @@
             <objects>
                 <viewController storyboardIdentifier="EpisodeView" title="PreviewEpisode" id="Wah-Ed-WPr" customClass="PreviewEpisode" customModule="ShukatsuSupportApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="6GC-ec-bfK">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="2000"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="1375"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="l2I-sL-PL3">
-                                <rect key="frame" x="0.0" y="44" width="375" height="1956"/>
+                                <rect key="frame" x="0.0" y="44" width="375" height="1331"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RsK-6t-QsL">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="2000"/>
@@ -722,11 +720,11 @@
                         <barButtonItem key="rightBarButtonItem" title="編集" id="qz5-wk-q5K">
                             <connections>
                                 <action selector="編集ボタン:" destination="Wah-Ed-WPr" id="aI8-vt-YRh"/>
-                                <segue destination="Cdl-g1-6xE" kind="show" id="RNg-dW-gye"/>
+                                <segue destination="ysO-JD-tWU" kind="show" id="ky0-YZ-IMp"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
-                    <size key="freeformSize" width="375" height="2000"/>
+                    <size key="freeformSize" width="375" height="1375"/>
                     <connections>
                         <outlet property="タイトル" destination="OBb-Uv-P5e" id="r5p-cK-7g3"/>
                         <outlet property="具体的に何をした" destination="muD-tk-J9D" id="m3e-qu-rDq"/>
@@ -745,7 +743,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uxq-Qs-Yw6" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <exit id="Cmd-yQ-2W5" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="2925.5999999999999" y="49.475262368815599"/>
+            <point key="canvasLocation" x="2885.5999999999999" y="6.746626686656672"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="b54-3F-djc">
@@ -1479,7 +1477,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aUf-VS-TEk" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="816.79999999999995" y="1677.6611694152925"/>
+            <point key="canvasLocation" x="-140" y="2234"/>
         </scene>
         <!--なぜなぜ分析-->
         <scene sceneID="UD5-hC-BwB">
@@ -1655,7 +1653,7 @@
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="lMs-Ye-hPH" userLabel="結論">
+                                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lMs-Ye-hPH" userLabel="結論">
                                                         <rect key="frame" x="0.0" y="30" width="345" height="130"/>
                                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                         <color key="textColor" systemColor="labelColor"/>
@@ -1775,7 +1773,7 @@
         <!--EpisodeUpdate-->
         <scene sceneID="AgD-LH-dp7">
             <objects>
-                <viewController storyboardIdentifier="EpisodeUpdate" title="EpisodeUpdate" id="ysO-JD-tWU" customClass="EpisodeDetailViewController" customModule="ShukatsuSupportApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="EpisodeUpdate" title="EpisodeUpdate" id="ysO-JD-tWU" customClass="EditEpisode" customModule="ShukatsuSupportApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="dXn-mS-MCE">
                         <rect key="frame" x="0.0" y="0.0" width="376" height="2000"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -2118,22 +2116,22 @@
                     <navigationItem key="navigationItem" title="エピソード編集" id="1pY-UG-Ipg">
                         <barButtonItem key="rightBarButtonItem" title="保存" id="LeX-Ea-ttg">
                             <connections>
-                                <action selector="更新を保存:" destination="ysO-JD-tWU" id="G89-Rm-Gwz"/>
+                                <action selector="保存:" destination="ysO-JD-tWU" id="Cd8-rI-Lig"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
                     <size key="freeformSize" width="376" height="2000"/>
                     <connections>
-                        <outlet property="更新_タイトル" destination="zi0-2X-bVl" id="rrB-eI-jfw"/>
-                        <outlet property="更新_具体的に何をした" destination="iNb-NA-Mv7" id="KJV-jM-k6p"/>
-                        <outlet property="更新_取り組んだ結果" destination="zEF-eY-Mwo" id="oCK-XY-69n"/>
-                        <outlet property="更新_学んだこと" destination="Wdu-3j-Cmh" id="MWT-9p-2BO"/>
-                        <outlet property="更新_工夫した点" destination="F4R-m9-6TP" id="fT2-XW-WCI"/>
-                        <outlet property="更新_改善点" destination="EoY-L4-4Ef" id="GxL-cX-wsi"/>
-                        <outlet property="更新_日付" destination="ITN-Wx-V9T" id="bpK-CC-wd2"/>
-                        <outlet property="更新_活かせた長所" destination="c7G-JK-rI0" id="yKm-UM-9Aw"/>
-                        <outlet property="更新_目標と困難" destination="cw8-8M-AxN" id="HCN-TN-s8Q"/>
-                        <outlet property="更新_評価" destination="oxf-Mt-PRZ" id="xfl-8f-C7m"/>
+                        <outlet property="タイトル" destination="zi0-2X-bVl" id="NHu-T3-N7e"/>
+                        <outlet property="具体的に何をした" destination="iNb-NA-Mv7" id="Y2o-NT-nks"/>
+                        <outlet property="取り組んだ結果" destination="zEF-eY-Mwo" id="brH-KP-aWl"/>
+                        <outlet property="学んだこと" destination="Wdu-3j-Cmh" id="zS2-s7-5cy"/>
+                        <outlet property="工夫した点" destination="F4R-m9-6TP" id="fnG-yI-8Wh"/>
+                        <outlet property="改善点" destination="EoY-L4-4Ef" id="zoN-bl-Pti"/>
+                        <outlet property="日付" destination="ITN-Wx-V9T" id="vFN-go-tQ2"/>
+                        <outlet property="活かせた長所" destination="c7G-JK-rI0" id="cRv-8K-8a5"/>
+                        <outlet property="目標と困難" destination="cw8-8M-AxN" id="cbS-FJ-GoK"/>
+                        <outlet property="評価点" destination="oxf-Mt-PRZ" id="oIw-qd-y7I"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PB8-bw-xO1" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -2142,7 +2140,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="oEl-67-w4Z"/>
+        <segue reference="vyt-vH-j78"/>
     </inferredMetricsTieBreakers>
     <resources>
         <namedColor name="AccentColor">

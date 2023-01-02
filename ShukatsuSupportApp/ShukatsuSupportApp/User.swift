@@ -34,4 +34,8 @@ class User: Object {
     @objc dynamic var user文章作成_取り組みと結果 = ""
     @objc dynamic var user文章作成_人柄 = ""
     @objc dynamic var user文章作成_学び = ""
+    
+    override static func primaryKey() -> String? {
+        return "userタイトル"
+    }
 }

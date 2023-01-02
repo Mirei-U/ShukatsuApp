@@ -19,11 +19,22 @@ class NazeNazeQuestionViewController: UIViewController {
     
     let edit = EpisodeDetailViewController()
     let realm = try! Realm()
+    var text_タイトル:String = ""
+    var text_なぜなぜ1:String = ""
+    var text_なぜなぜ2:String = ""
+    var text_なぜなぜ3:String = ""
+    var text_なぜなぜ4:String = ""
+    var text_なぜなぜ5:String = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        let userData = edit.realm.objects(User.self)
-        テーマ.text = userData[0].userタイトル
+        テーマ.text = text_タイトル
+        なぜなぜ1.text = text_なぜなぜ1
+        なぜなぜ2.text = text_なぜなぜ2
+        なぜなぜ3.text = text_なぜなぜ3
+        なぜなぜ4.text = text_なぜなぜ4
+        なぜなぜ5.text = text_なぜなぜ5
+        print("text_なぜなぜ1: \(text_なぜなぜ1)")
     }
     override func viewWillAppear(_ animated: Bool) {
 //        edit.removeUserDefaults()
@@ -35,9 +46,8 @@ class NazeNazeQuestionViewController: UIViewController {
 
     @IBAction func 保存(_ sender: Any) {
         
-        
         //グラフ画面に戻る
-        self.navigationController?.popToViewController(navigationController!.viewControllers[1], animated: true)
+        self.navigationController?.popToViewController(navigationController!.viewControllers[0], animated: true)
         print("⏪戻る")
         let user = User()
         user.userなぜなぜ1 = なぜなぜ1.text!
@@ -46,10 +56,29 @@ class NazeNazeQuestionViewController: UIViewController {
         user.userなぜなぜ4 = なぜなぜ4.text!
         user.userなぜなぜ5 = なぜなぜ5.text!
         
-        try! realm.write {
-//            realm.delete(realm.objects(User.self))
-//            realm.add(realm.objects(User.self))
-            realm.add(user)
+        
+        do{
+            try realm.write {
+    //            realm.delete(realm.objects(User.self))
+    //            realm.add(realm.objects(User.self))
+    //            realm.delete(user)
+//                realm.add(user)
+                let targetUser = realm.object(ofType: User.self, forPrimaryKey: text_タイトル)
+//                let targetUser = realm.objects(User.self).filter("userタイトル == %@",self.text_タイトル)
+                print("更新前: \(targetUser!.userなぜなぜ1)")
+                targetUser!.userなぜなぜ1 = なぜなぜ1.text!
+                targetUser!.userなぜなぜ2 = なぜなぜ2.text!
+                targetUser!.userなぜなぜ3 = なぜなぜ3.text!
+                targetUser!.userなぜなぜ4 = なぜなぜ4.text!
+                targetUser!.userなぜなぜ5 = なぜなぜ5.text!
+                print("更新後: \(targetUser!.userなぜなぜ1)")
+//                targetUser.userなぜなぜ2 = なぜなぜ2.text!
+//                targetUser.userなぜなぜ3 = なぜなぜ3.text!
+//                targetUser.userなぜなぜ4 = なぜなぜ4.text!
+//                targetUser.userなぜなぜ5 = なぜなぜ5.text!
+            }
+        }catch {
+          print("Error \(error)")
         }
     }
        

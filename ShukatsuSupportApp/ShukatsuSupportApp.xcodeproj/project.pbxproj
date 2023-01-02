@@ -23,6 +23,7 @@
 		CB22626D290C2167003B1F1C /* TOPViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB22626C290C2167003B1F1C /* TOPViewController.swift */; };
 		CB226270290E9256003B1F1C /* Charts in Frameworks */ = {isa = PBXBuildFile; productRef = CB22626F290E9256003B1F1C /* Charts */; };
 		CB2677D529531F98002A0372 /* EpisodeUpdateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB2677D429531F98002A0372 /* EpisodeUpdateViewController.swift */; };
+		CB81984C29596F4200842613 /* HorizontalPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB81984B29596F4200842613 /* HorizontalPageViewController.swift */; };
 		CBAD24DC29182F7800C2DC80 /* NazeNazeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBAD24DB29182F7800C2DC80 /* NazeNazeViewController.swift */; };
 		CBAF3BE92933E08800B7A1DE /* GraphViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBAF3BE82933E08800B7A1DE /* GraphViewController.swift */; };
 		CBAF3BED2933E1A700B7A1DE /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBAF3BEC2933E1A700B7A1DE /* User.swift */; };
@@ -72,6 +73,7 @@
 		CB22625F290C1CB4003B1F1C /* ShukatsuSupportAppUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShukatsuSupportAppUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		CB22626C290C2167003B1F1C /* TOPViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TOPViewController.swift; sourceTree = "<group>"; };
 		CB2677D429531F98002A0372 /* EpisodeUpdateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodeUpdateViewController.swift; sourceTree = "<group>"; };
+		CB81984B29596F4200842613 /* HorizontalPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HorizontalPageViewController.swift; sourceTree = "<group>"; };
 		CBAD24DB29182F7800C2DC80 /* NazeNazeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NazeNazeViewController.swift; sourceTree = "<group>"; };
 		CBAF3BE82933E08800B7A1DE /* GraphViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraphViewController.swift; sourceTree = "<group>"; };
 		CBAF3BEC2933E1A700B7A1DE /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
@@ -131,7 +133,6 @@
 		CB226230290C1CAE003B1F1C = {
 			isa = PBXGroup;
 			children = (
-				CB1FFCFB2958C16E00873851 /* UpdateEpisodeViewController.swift */,
 				CB22623B290C1CAE003B1F1C /* ShukatsuSupportApp */,
 				CB226252290C1CB4003B1F1C /* ShukatsuSupportAppTests */,
 				CB22625C290C1CB4003B1F1C /* ShukatsuSupportAppUITests */,
@@ -154,14 +155,16 @@
 		CB22623B290C1CAE003B1F1C /* ShukatsuSupportApp */ = {
 			isa = PBXGroup;
 			children = (
+				CB81984B29596F4200842613 /* HorizontalPageViewController.swift */,
+				CB1FFCFB2958C16E00873851 /* UpdateEpisodeViewController.swift */,
 				CBAF3BEC2933E1A700B7A1DE /* User.swift */,
-				CBAD24DB29182F7800C2DC80 /* NazeNazeViewController.swift */,
 				CBAF3BE82933E08800B7A1DE /* GraphViewController.swift */,
 				CB22623C290C1CAE003B1F1C /* AppDelegate.swift */,
 				CB22623E290C1CAE003B1F1C /* SceneDelegate.swift */,
 				CB226240290C1CAE003B1F1C /* ViewController.swift */,
 				CB226242290C1CAE003B1F1C /* Main.storyboard */,
 				CB1F75B3293DC4BD002AF86B /* EditWritingViewController.swift */,
+				CBAD24DB29182F7800C2DC80 /* NazeNazeViewController.swift */,
 				CB1F75B1293D7B92002AF86B /* NazeNazeQuestionViewController.swift */,
 				CBAF3BEE2933E1F900B7A1DE /* PreviewEpisode.swift */,
 				CB2677D429531F98002A0372 /* EpisodeUpdateViewController.swift */,
@@ -388,6 +391,7 @@
 				CB2677D529531F98002A0372 /* EpisodeUpdateViewController.swift in Sources */,
 				CBB682CE291DEC8A001A1C05 /* EpisodeDetailViewController.swift in Sources */,
 				CBBDA7232918D507006EC35C /* ESwritingViewController.swift in Sources */,
+				CB81984C29596F4200842613 /* HorizontalPageViewController.swift in Sources */,
 				CB22623D290C1CAE003B1F1C /* AppDelegate.swift in Sources */,
 				CBAD24DC29182F7800C2DC80 /* NazeNazeViewController.swift in Sources */,
 				CB22623F290C1CAE003B1F1C /* SceneDelegate.swift in Sources */,
