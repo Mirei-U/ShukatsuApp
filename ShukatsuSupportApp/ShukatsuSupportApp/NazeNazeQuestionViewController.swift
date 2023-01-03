@@ -25,6 +25,7 @@ class NazeNazeQuestionViewController: UIViewController {
     var text_なぜなぜ3:String = ""
     var text_なぜなぜ4:String = ""
     var text_なぜなぜ5:String = ""
+    var id:String = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -63,9 +64,8 @@ class NazeNazeQuestionViewController: UIViewController {
     //            realm.add(realm.objects(User.self))
     //            realm.delete(user)
 //                realm.add(user)
-                let targetUser = realm.object(ofType: User.self, forPrimaryKey: text_タイトル)
+                let targetUser = realm.object(ofType: User.self, forPrimaryKey: id)
 //                let targetUser = realm.objects(User.self).filter("userタイトル == %@",self.text_タイトル)
-                print("更新前: \(targetUser!.userなぜなぜ1)")
                 targetUser!.userなぜなぜ1 = なぜなぜ1.text!
                 targetUser!.userなぜなぜ2 = なぜなぜ2.text!
                 targetUser!.userなぜなぜ3 = なぜなぜ3.text!

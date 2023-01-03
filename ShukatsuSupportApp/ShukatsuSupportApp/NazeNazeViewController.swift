@@ -26,6 +26,7 @@ class NazeNazeViewController: UIViewController,UITableViewDelegate,UITableViewDa
     var なぜなぜ3:String = ""
     var なぜなぜ4:String = ""
     var なぜなぜ5:String = ""
+    var id:String = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -63,6 +64,7 @@ class NazeNazeViewController: UIViewController,UITableViewDelegate,UITableViewDa
         なぜなぜ3 = userData[indexPath.row].userなぜなぜ3
         なぜなぜ4 = userData[indexPath.row].userなぜなぜ4
         なぜなぜ5 = userData[indexPath.row].userなぜなぜ5
+        id = userData[indexPath.row].game_id
         performSegue(withIdentifier: "toNazeNaze", sender: nil)
     }
     
@@ -74,6 +76,7 @@ class NazeNazeViewController: UIViewController,UITableViewDelegate,UITableViewDa
         NazeNazeVC.text_なぜなぜ3 = なぜなぜ3
         NazeNazeVC.text_なぜなぜ4 = なぜなぜ4
         NazeNazeVC.text_なぜなぜ5 = なぜなぜ5
+        NazeNazeVC.id = id
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {

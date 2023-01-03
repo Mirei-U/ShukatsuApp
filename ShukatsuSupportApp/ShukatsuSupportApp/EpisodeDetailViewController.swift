@@ -53,6 +53,7 @@ class EpisodeDetailViewController: UIViewController, UIPickerViewDelegate, UIPic
     var text_学んだこと: String = ""
     var text_評価: String = ""
     var text_日付: String = ""
+    var id = ""
 
     var 選択肢: [String] = []
     weak var pickerView: UIPickerView?
@@ -118,36 +119,7 @@ class EpisodeDetailViewController: UIViewController, UIPickerViewDelegate, UIPic
         let userData = realm.objects(User.self)
         print("🟥全てのデータ\(userData)")
         print(Realm.Configuration.defaultConfiguration.fileURL!)
-        print("🟥EpisodeEditのtext_タイトル: \(text_タイトル)")
-//        更新画面
-        タイトル.text! = text_タイトル
-        タイトル.delegate = self
-        タイトル.borderStyle = .roundedRect
-        self.view.addSubview(タイトル)
-        print("🟥EpisodeEditのタイトル.text: \(タイトル.text!)")
-//        更新_日付.text! = text_日付
-//        更新_評価.text! = text_評価
-//        更新_具体的に何をした.text! = text_具体的に何をした
-//        更新_目標と困難.text! = text_目標と困難
-//        更新_工夫した点.text! = text_工夫した点
-//        更新_取り組んだ結果.text! = text_取り組んだ結果
-//        更新_活かせた長所.text! = text_活かせた長所
-//        更新_改善点.text! = text_改善点
-//        更新_学んだこと.text! = text_学んだこと
     }
-//    /*
-//      UITextFieldが編集された直前に呼ばれる
-//      */
-//     func textFieldDidBeginEditing(_ textField: UITextField) {
-//         print("textFieldDidBeginEditing: \(textField.text!)")
-//     }
-//
-//     /*
-//      UITextFieldが編集された直後に呼ばれる
-//      */
-//     func textFieldDidEndEditing(_ textField: UITextField) {
-//         print("textFieldDidEndEditing: \(textField.text!)")
-//     }
     
     //評価点PickerView
     //↓↓↓↓
@@ -185,9 +157,6 @@ class EpisodeDetailViewController: UIViewController, UIPickerViewDelegate, UIPic
         // Dispose of any resources that can be recreated.
     }
     
-    @IBAction func 更新を保存(_ sender: Any) {
-        
-    }
     @IBAction func 保存(_ sender: Any) {
         
         if(タイトル.text! == ""){

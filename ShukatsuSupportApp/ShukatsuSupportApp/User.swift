@@ -35,7 +35,9 @@ class User: Object {
     @objc dynamic var user文章作成_人柄 = ""
     @objc dynamic var user文章作成_学び = ""
     
+    @objc dynamic var game_id = UUID().uuidString
+    
     override static func primaryKey() -> String? {
-        return "userタイトル"
+        return "game_id"
     }
 }

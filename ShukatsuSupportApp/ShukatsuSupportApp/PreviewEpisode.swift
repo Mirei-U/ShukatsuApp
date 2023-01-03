@@ -36,12 +36,12 @@ class PreviewEpisode: UIViewController, EditViewControllerDelegate {
     var text_学んだこと: String = ""
     var text_評価: String = ""
     var text_日付: String = ""
+    var id: String = ""
     
 
 //    let realm = try! Realm()
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         タイトル.text = text_タイトル
         日付.text = text_日付
         評価.text = text_評価
@@ -52,6 +52,7 @@ class PreviewEpisode: UIViewController, EditViewControllerDelegate {
         活かせた長所.text  = text_活かせた長所
         改善点.text  = text_改善点
         学んだこと.text  = text_学んだこと
+        print("@PreviewEpisode: ", id)
     }
 
     override func didReceiveMemoryWarning() {
@@ -68,17 +69,18 @@ class PreviewEpisode: UIViewController, EditViewControllerDelegate {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-                let DetailVC: EditEpisode = (segue.destination as? EditEpisode)!
-                DetailVC.text_タイトル = タイトル.text!
-                DetailVC.text_具体的に何をした = 具体的に何をした.text!
-                DetailVC.text_目標と困難 = 目標と困難.text!
-                DetailVC.text_工夫した点 = 工夫した点.text!
-                DetailVC.text_取り組んだ結果 = 取り組んだ結果.text!
-                DetailVC.text_活かせた長所 = 活かせた長所.text!
-                DetailVC.text_改善点 = 改善点.text!
-                DetailVC.text_学んだこと = 学んだこと.text!
-                DetailVC.text_日付 = 日付.text!
-                DetailVC.text_評価 = 評価.text!
+        let DetailVC: EditEpisode = (segue.destination as? EditEpisode)!
+        DetailVC.text_タイトル = タイトル.text!
+        DetailVC.text_具体的に何をした = 具体的に何をした.text!
+        DetailVC.text_目標と困難 = 目標と困難.text!
+        DetailVC.text_工夫した点 = 工夫した点.text!
+        DetailVC.text_取り組んだ結果 = 取り組んだ結果.text!
+        DetailVC.text_活かせた長所 = 活かせた長所.text!
+        DetailVC.text_改善点 = 改善点.text!
+        DetailVC.text_学んだこと = 学んだこと.text!
+        DetailVC.text_日付 = 日付.text!
+        DetailVC.text_評価 = 評価.text!
+        DetailVC.id = id
     }
     func editDidFinished(modalText text: String?){
         タイトル.text = text

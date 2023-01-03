@@ -10,23 +10,13 @@ import Charts
 import RealmSwift
 
 
-//struct EpisodeInfo{
-//    var タイトル: String
-//    var 具体的に何をした: String
-//    var 目標と困難: String
-//    var 工夫した点: String
-//    var 取り組んだ結果: String
-//    var 活かせた長所: String
-//    var 改善点: String
-//    var 学んだこと: String
-//    var 評価: String
-//    var 日付: String
-//}
 class GraphViewController: UIViewController,UITableViewDelegate,UITableViewDataSource {
 
     @IBOutlet var EpisodeTableView: UITableView!
     
     let edit = EpisodeDetailViewController()
+//    let preview = PreviewEpisode()
+    let update = EditEpisode()
     var chartView: LineChartView!
     var chartDataSet: LineChartDataSet!
     var sampleData:[Int] = []
@@ -43,6 +33,7 @@ class GraphViewController: UIViewController,UITableViewDelegate,UITableViewDataS
     var 学んだこと: String = ""
     var 評価: String = ""
     var 日付: String = ""
+    var id: String = ""
     
     @IBOutlet weak var Episode: UITableView!
     
@@ -84,8 +75,6 @@ class GraphViewController: UIViewController,UITableViewDelegate,UITableViewDataS
     
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath){
-        print("選択されたセルのセクション番号は\(indexPath.section)です。")
-        print("選択されたセルのRow番号は\(indexPath.row)です。")
         
         let userData = edit.realm.objects(User.self)
         タイトル = userData[indexPath.row].userタイトル
@@ -98,6 +87,7 @@ class GraphViewController: UIViewController,UITableViewDelegate,UITableViewDataS
         学んだこと = userData[indexPath.row].user学んだこと
         日付 = userData[indexPath.row].user日付
         評価 = userData[indexPath.row].user評価点
+        id = userData[indexPath.row].game_id
         performSegue(withIdentifier: "toPreviewEpisode", sender: nil)
     }
     
@@ -116,6 +106,8 @@ class GraphViewController: UIViewController,UITableViewDelegate,UITableViewDataS
                 editVC.text_学んだこと = 学んだこと
                 editVC.text_日付 = 日付
                 editVC.text_評価 = 評価
+                editVC.id = id
+                print("@GraphViewController: ", id)
             }
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -123,8 +115,9 @@ class GraphViewController: UIViewController,UITableViewDelegate,UITableViewDataS
         let cell: UITableViewCell = tableView.dequeueReusableCell(withIdentifier: "EpisodeCell", for: indexPath)
         let userData = edit.realm.objects(User.self)
         cell.textLabel!.text = "[タイトル：\(userData[indexPath.row].userタイトル)]"
-        let results = edit.realm.objects(User.self).sorted(byKeyPath: "user日付", ascending: false)
-        print(results)
+        update.id = userData[indexPath.row].game_id
+        PreviewEpisode().id = userData[indexPath.row].game_id
+        print("更新update.id: ", userData[indexPath.row].game_id)
         return cell
     }
                         

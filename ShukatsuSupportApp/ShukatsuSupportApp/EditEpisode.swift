@@ -20,16 +20,6 @@ import SwiftUI
 
 class EditEpisode: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource, UITextFieldDelegate, UITextViewDelegate{
 
-//    @IBOutlet var タイトル : UITextField!
-//    @IBOutlet var 日付: UITextField!
-//    @IBOutlet var 評価点: UITextField!
-//    @IBOutlet var 具体的に何をした: UITextView!
-//    @IBOutlet var 目標と困難: UITextView!
-//    @IBOutlet var 工夫した点: UITextView!
-//    @IBOutlet var 取り組んだ結果: UITextView!
-//    @IBOutlet var 活かせた長所: UITextView!
-//    @IBOutlet var 改善点: UITextView!
-//    @IBOutlet var 学んだこと: UITextView!
     @IBOutlet var タイトル : UITextField!
     @IBOutlet var 日付: UITextField!
     @IBOutlet var 評価点: UITextField!
@@ -40,16 +30,6 @@ class EditEpisode: UIViewController, UIPickerViewDelegate, UIPickerViewDataSourc
     @IBOutlet var 活かせた長所: UITextView!
     @IBOutlet var 改善点: UITextView!
     @IBOutlet var 学んだこと: UITextView!
-//    @IBOutlet var 更新_タイトル: UITextField!
-//    @IBOutlet var 更新_日付: UITextField!
-//    @IBOutlet var 更新_評価: UITextField!
-//    @IBOutlet var 更新_具体的に何をした: UITextView!
-//    @IBOutlet var 更新_目標と困難: UITextView!
-//    @IBOutlet var 更新_工夫した点: UITextView!
-//    @IBOutlet var 更新_取り組んだ結果: UITextView!
-//    @IBOutlet var 更新_活かせた長所: UITextView!
-//    @IBOutlet var 更新_改善点: UITextView!
-//    @IBOutlet var 更新_学んだこと: UITextView!
     
 //    遷移元から受け取る値を設置
     var text_タイトル:String = ""
@@ -62,6 +42,7 @@ class EditEpisode: UIViewController, UIPickerViewDelegate, UIPickerViewDataSourc
     var text_学んだこと: String = ""
     var text_評価: String = ""
     var text_日付: String = ""
+    var id: String = ""
 
     var 選択肢: [String] = []
     weak var pickerView: UIPickerView?
@@ -133,8 +114,8 @@ class EditEpisode: UIViewController, UIPickerViewDelegate, UIPickerViewDataSourc
         let userData = realm.objects(User.self)
         print("🟥全てのデータ\(userData)")
         print(Realm.Configuration.defaultConfiguration.fileURL!)
-        print("🟥EpisodeEditのtext_タイトル: \(text_タイトル)")
-        print("🟥EpisodeEditのタイトル.text: \(タイトル.text!)")
+        
+        print("@EditEpisode: ", id)
     }
     
     //評価点PickerView
@@ -184,16 +165,6 @@ class EditEpisode: UIViewController, UIPickerViewDelegate, UIPickerViewDataSourc
 //        self.navigationController?.popToViewController(navigationController!.viewControllers[1], animated: true)
         print("⏪戻る")
         let user = User()
-//        user.userタイトル = タイトル.text!
-//        user.user日付 = 日付.text!
-//        user.user具体的に何をした = 具体的に何をした.text!
-//        user.user目標と困難 = 目標と困難.text!
-//        user.user工夫した点 = 工夫した点.text!
-//        user.user取り組んだ結果 = 取り組んだ結果.text!
-//        user.user活かせた長所 = 活かせた長所.text!
-//        user.user改善点 = 改善点.text!
-//        user.user学んだこと = 学んだこと.text!
-        
         switch 評価点.text{
         case "5: 満足":
             user.user評価点 = "5"
@@ -224,15 +195,13 @@ class EditEpisode: UIViewController, UIPickerViewDelegate, UIPickerViewDataSourc
             user.user評価点 = ""
             print("評価未記入")
         }
-        if realm.object(ofType: User.self, forPrimaryKey: text_タイトル) == nil {
-            realm.add(user, update: .modified)
-        }
         do{
             try realm.write {
-                let targetUser = realm.object(ofType: User.self, forPrimaryKey: text_タイトル)
-//                print("更新前: \(targetUser!.userなぜなぜ1)")
-//                targetUser!.userタイトル = タイトル.text!
+                print("🔺realm.write: \(id)")
+                let targetUser = realm.object(ofType: User.self, forPrimaryKey: id)
+                targetUser!.userタイトル = タイトル.text!
                 targetUser!.user日付 = 日付.text!
+                targetUser!.user評価点 = user.user評価点
                 targetUser!.user具体的に何をした = 具体的に何をした.text!
                 targetUser!.user目標と困難 = 目標と困難.text!
                 targetUser!.user工夫した点 = 工夫した点.text!
