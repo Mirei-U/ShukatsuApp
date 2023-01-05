@@ -15,6 +15,7 @@ class ESwritingViewController: UIViewController,UITableViewDelegate,UITableViewD
     var chartView: LineChartView!
     var chartDataSet: LineChartDataSet!
     var sampleData:[Int] = []
+    var id: String = ""
     
     @IBOutlet var EpisodeTableView: UITableView!
     @IBOutlet weak var ESLabel: UILabel!
@@ -49,6 +50,20 @@ class ESwritingViewController: UIViewController,UITableViewDelegate,UITableViewD
         //セル表示内容設定
         cell.textLabel!.text = "[タイトル：\(userData[indexPath.row].userタイトル)]"
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath){
+        
+        let userData = edit.realm.objects(User.self)
+        id = userData[indexPath.row].game_id
+        performSegue(withIdentifier: "toPreviewWriting", sender: nil)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if (segue.identifier == "toPreviewWriting") {
+            let editVC: PreviewWritingViewController = (segue.destination as? PreviewWritingViewController)!
+            editVC.id = id
+        }
     }
     func displayChart(data: [Int]) {
             // グラフの範囲を指定する
