@@ -41,10 +41,12 @@ class NazeNazeViewController: UIViewController,UITableViewDelegate,UITableViewDa
         //Realm準備
         let realm = try! Realm()
         let userData = realm.objects(User.self)
+        
         var sampleData:[Int] = []
+        let sort_test = realm.objects(User.self).sorted(byKeyPath: "user日付", ascending: true)
         // グラフを表示する
         for i in 0 ..< userData.count{
-            sampleData.append(Int(userData[i].user評価点) ?? 0)
+            sampleData.append(Int(sort_test[i].user評価点) ?? 0)
         }
         displayChart(data: sampleData)
     }
@@ -57,14 +59,16 @@ class NazeNazeViewController: UIViewController,UITableViewDelegate,UITableViewDa
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath){
         
-        let userData = edit.realm.objects(User.self)
-        タイトル = userData[indexPath.row].userタイトル
-        なぜなぜ1 = userData[indexPath.row].userなぜなぜ1
-        なぜなぜ2 = userData[indexPath.row].userなぜなぜ2
-        なぜなぜ3 = userData[indexPath.row].userなぜなぜ3
-        なぜなぜ4 = userData[indexPath.row].userなぜなぜ4
-        なぜなぜ5 = userData[indexPath.row].userなぜなぜ5
-        id = userData[indexPath.row].game_id
+//        let userData = edit.realm.objects(User.self)
+        let realm = try! Realm()
+        let sort_test = realm.objects(User.self).sorted(byKeyPath: "user日付", ascending: true)
+        タイトル = sort_test[indexPath.row].userタイトル
+        なぜなぜ1 = sort_test[indexPath.row].userなぜなぜ1
+        なぜなぜ2 = sort_test[indexPath.row].userなぜなぜ2
+        なぜなぜ3 = sort_test[indexPath.row].userなぜなぜ3
+        なぜなぜ4 = sort_test[indexPath.row].userなぜなぜ4
+        なぜなぜ5 = sort_test[indexPath.row].userなぜなぜ5
+        id = sort_test[indexPath.row].game_id
         performSegue(withIdentifier: "toNazeNaze", sender: nil)
     }
     
@@ -82,14 +86,22 @@ class NazeNazeViewController: UIViewController,UITableViewDelegate,UITableViewDa
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 
         let cell: UITableViewCell = tableView.dequeueReusableCell(withIdentifier: "EpisodeCell", for: indexPath)
-        let userData = edit.realm.objects(User.self)
-        cell.textLabel!.text = "[タイトル：\(userData[indexPath.row].userタイトル)]"
+//        let userData = edit.realm.objects(User.self)
+        let realm = try! Realm()
+        let sort_test = realm.objects(User.self).sorted(byKeyPath: "user日付", ascending: true)
+        cell.textLabel?.numberOfLines=0
+        cell.textLabel!.text = "\(sort_test[indexPath.row].user日付)\n[\(sort_test[indexPath.row].userタイトル)]"
         return cell
     }
 
     func displayChart(data: [Int]) {
+//        let realm = try! Realm()
+//        let sort_test = realm.objects(User.self).sorted(byKeyPath: "user日付", ascending: true)
+//
+//        print("sort_test: [[ \(sort_test[0].user日付) ]]")
             // グラフの範囲を指定する
-            chartView = LineChartView(frame: CGRect(x: 0, y: 150, width: view.frame.width, height: 230))
+        chartView = LineChartView(frame: CGRect(x: 0, y: 150, width: view.frame.width, height: 230))
+
             // プロットデータ(y軸)を保持する配列
             var dataEntries = [ChartDataEntry]()
             
@@ -99,21 +111,21 @@ class NazeNazeViewController: UIViewController,UITableViewDelegate,UITableViewDa
             }
             // グラフにデータを適用
             chartDataSet = LineChartDataSet(entries: dataEntries, label: "SampleDataChart")
-            
             chartDataSet.lineWidth = 5.0 // グラフの線の太さを変更
             chartDataSet.mode = .cubicBezier // 滑らかなグラフの曲線にする
-            chartDataSet.colors =  [UIColor(red: 255/255, green: 230/255, blue: 154/255, alpha: 1.0)]//線の色
-            chartDataSet.circleColors = [UIColor(red: 255/255, green: 210/255, blue: 76/255, alpha: 1.0)]//点の色
-            chartView.gridBackgroundColor = UIColor(red: 1, green: 0.6, blue: 0.3, alpha: 1.0)
+            chartDataSet.colors =  [UIColor(red: 185/255, green: 255/255, blue: 248/255, alpha: 1.0)]//線の色
+            chartDataSet.circleColors = [UIColor(red: 111/255, green: 237/255, blue: 214/255, alpha: 1.0)]//点の色
+        //背景色
+            chartView.gridBackgroundColor = UIColor(red: 0.23, green: 0.24, blue: 0.21, alpha: 1.0)
             chartView.data = LineChartData(dataSet: chartDataSet)
             
             // X軸(xAxis)
-            chartView.xAxis.labelPosition = .bottom // x軸ラベルをグラフの下に表示する
-            
+//            chartView.xAxis.labelPosition = .bottom // x軸ラベルをグラフの下に表示する
+        chartView.xAxis.enabled = false //x軸ラベル非表示
             // Y軸(leftAxis/rightAxis)
             chartView.leftAxis.axisMaximum = 5 //y左軸最大値
-            chartView.leftAxis.axisMinimum = 0 //y左軸最小値
-            chartView.leftAxis.labelCount = 5 // y軸ラベルの数
+            chartView.leftAxis.axisMinimum = 1 //y左軸最小値
+            chartView.leftAxis.labelCount = 4 // y軸ラベルの数
             chartView.rightAxis.enabled = false // 右側の縦軸ラベルを非表示
             
             // その他の変更
@@ -123,8 +135,9 @@ class NazeNazeViewController: UIViewController,UITableViewDelegate,UITableViewDa
             chartView.doubleTapToZoomEnabled = false // ダブルタップズーム不可
             chartView.extraTopOffset = 20 // 上から20pxオフセットすることで上の方にある値(99.0)を表示する
             
-            chartView.animate(xAxisDuration: 2) // 2秒かけて左から右にグラフをアニメーションで表示する
-            
+            chartView.animate(xAxisDuration: 1) // 1秒かけて左から右にグラフをアニメーションで表示する
+        
+        chartView.removeFromSuperview()
             view.addSubview(chartView)
         }
 

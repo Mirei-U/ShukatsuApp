@@ -8,6 +8,7 @@
 import UIKit
 import Charts
 import RealmSwift
+import SwiftUI
 
 
 class GraphViewController: UIViewController,UITableViewDelegate,UITableViewDataSource {
@@ -52,17 +53,17 @@ class GraphViewController: UIViewController,UITableViewDelegate,UITableViewDataS
         let userData = realm.objects(User.self)
         
         var sampleData:[Int] = []
+        let sort_test = realm.objects(User.self).sorted(byKeyPath: "user日付", ascending: true)
         // グラフを表示する
         for i in 0 ..< userData.count{
-            sampleData.append(Int(userData[i].user評価点) ?? 0)
+            sampleData.append(Int(sort_test[i].user評価点) ?? 0)
         }
         
         print("<< viewWillAppear >>")
         displayChart(data: sampleData)
 //        displayChartTest(data: sampleData)
         
-        let sorte = realm.objects(User.self).sorted(byKeyPath: "userタイトル", ascending: true)
-        print("ソート結果: \(sorte)")
+        
       //テーブルを再描画
         Episode.reloadData()
     }
@@ -76,18 +77,20 @@ class GraphViewController: UIViewController,UITableViewDelegate,UITableViewDataS
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath){
         
-        let userData = edit.realm.objects(User.self)
-        タイトル = userData[indexPath.row].userタイトル
-        具体的に何をした = userData[indexPath.row].user具体的に何をした
-        目標と困難 = userData[indexPath.row].user目標と困難
-        工夫した点 = userData[indexPath.row].user工夫した点
-        取り組んだ結果 = userData[indexPath.row].user取り組んだ結果
-        活かせた長所 = userData[indexPath.row].user活かせた長所
-        改善点 = userData[indexPath.row].user改善点
-        学んだこと = userData[indexPath.row].user学んだこと
-        日付 = userData[indexPath.row].user日付
-        評価 = userData[indexPath.row].user評価点
-        id = userData[indexPath.row].game_id
+//        let userData = edit.realm.objects(User.self)
+        let realm = try! Realm()
+        let sort_test = realm.objects(User.self).sorted(byKeyPath: "user日付", ascending: true)
+        タイトル = sort_test[indexPath.row].userタイトル
+        具体的に何をした = sort_test[indexPath.row].user具体的に何をした
+        目標と困難 = sort_test[indexPath.row].user目標と困難
+        工夫した点 = sort_test[indexPath.row].user工夫した点
+        取り組んだ結果 = sort_test[indexPath.row].user取り組んだ結果
+        活かせた長所 = sort_test[indexPath.row].user活かせた長所
+        改善点 = sort_test[indexPath.row].user改善点
+        学んだこと = sort_test[indexPath.row].user学んだこと
+        日付 = sort_test[indexPath.row].user日付
+        評価 = sort_test[indexPath.row].user評価点
+        id = sort_test[indexPath.row].game_id
         performSegue(withIdentifier: "toPreviewEpisode", sender: nil)
     }
     
@@ -114,15 +117,22 @@ class GraphViewController: UIViewController,UITableViewDelegate,UITableViewDataS
 
         let cell: UITableViewCell = tableView.dequeueReusableCell(withIdentifier: "EpisodeCell", for: indexPath)
         let userData = edit.realm.objects(User.self)
-        cell.textLabel!.text = "[タイトル：\(userData[indexPath.row].userタイトル)]"
-        update.id = userData[indexPath.row].game_id
-        PreviewEpisode().id = userData[indexPath.row].game_id
+        let realm = try! Realm()
+        let sort_test = realm.objects(User.self).sorted(byKeyPath: "user日付", ascending: true)
+        cell.textLabel?.numberOfLines=0
+        
+        cell.textLabel!.text = "\(sort_test[indexPath.row].user日付)\n[\(sort_test[indexPath.row].userタイトル)]"
+        update.id = sort_test[indexPath.row].game_id
+        PreviewEpisode().id = sort_test[indexPath.row].game_id
         print("更新update.id: ", userData[indexPath.row].game_id)
         return cell
     }
                         
     func displayChart(data: [Int]) {
-        print("<< displayChart >>")
+        let realm = try! Realm()
+//        let sort_test = realm.objects(User.self).sorted(byKeyPath: "user日付", ascending: true)
+//
+//        print("sort_test: [[ \(sort_test[0].user日付) ]]")
             // グラフの範囲を指定する
         chartView = LineChartView(frame: CGRect(x: 0, y: 150, width: view.frame.width, height: 230))
 
@@ -144,12 +154,12 @@ class GraphViewController: UIViewController,UITableViewDelegate,UITableViewDataS
             chartView.data = LineChartData(dataSet: chartDataSet)
             
             // X軸(xAxis)
-            chartView.xAxis.labelPosition = .bottom // x軸ラベルをグラフの下に表示する
-            
+//            chartView.xAxis.labelPosition = .bottom // x軸ラベルをグラフの下に表示する
+        chartView.xAxis.enabled = false //x軸ラベル非表示
             // Y軸(leftAxis/rightAxis)
             chartView.leftAxis.axisMaximum = 5 //y左軸最大値
-            chartView.leftAxis.axisMinimum = 0 //y左軸最小値
-            chartView.leftAxis.labelCount = 5 // y軸ラベルの数
+            chartView.leftAxis.axisMinimum = 1 //y左軸最小値
+            chartView.leftAxis.labelCount = 4 // y軸ラベルの数
             chartView.rightAxis.enabled = false // 右側の縦軸ラベルを非表示
             
             // その他の変更
@@ -159,9 +169,17 @@ class GraphViewController: UIViewController,UITableViewDelegate,UITableViewDataS
             chartView.doubleTapToZoomEnabled = false // ダブルタップズーム不可
             chartView.extraTopOffset = 20 // 上から20pxオフセットすることで上の方にある値(99.0)を表示する
             
-            chartView.animate(xAxisDuration: 1) // 2秒かけて左から右にグラフをアニメーションで表示する
+            chartView.animate(xAxisDuration: 1) // 1秒かけて左から右にグラフをアニメーションで表示する
+
+            // 指を離してもスクロールが続くか
+            chartView.dragDecelerationEnabled = true
+
+            // 指を離してからの自動スクロールの減速度合い(0~1)
+            chartView.dragDecelerationFrictionCoef = 0.9
+            // データがない時に表示するテキスト
+            chartView.noDataText = "No chart data available."
         
-        chartView.removeFromSuperview()
+            chartView.removeFromSuperview()
             view.addSubview(chartView)
         }
     

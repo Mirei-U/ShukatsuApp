@@ -99,15 +99,15 @@ class EditEpisode: UIViewController, UIPickerViewDelegate, UIPickerViewDataSourc
         評価点.inputView = pv
         self.pickerView = pv
         
-        // ピッカー設定
-        pickerView!.delegate = self
-        pickerView!.dataSource = self
-        pickerView!.showsSelectionIndicator = true
-        toolbar.setItems([spacelItem, doneItem], animated: true)
-        
-        // インプットビュー設定
-        評価点.inputView = pickerView
-        評価点.inputAccessoryView = toolbar
+//        // ピッカー設定
+//        pickerView!.delegate = self
+//        pickerView!.dataSource = self
+//        pickerView!.showsSelectionIndicator = true
+//        toolbar.setItems([spacelItem, doneItem], animated: true)
+//
+//        // インプットビュー設定
+//        評価点.inputView = pickerView
+//        評価点.inputAccessoryView = toolbar
 
         let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(self.dismissKeyboard))
         tap.cancelsTouchesInView = false
@@ -153,8 +153,8 @@ class EditEpisode: UIViewController, UIPickerViewDelegate, UIPickerViewDataSourc
         DATE = DATE_FORMATTER.string(from: datePicker.date)
         日付.text = DATE
         
-        評価点.endEditing(true)
-        評価点.text = "\(選択肢[pickerView!.selectedRow(inComponent: 0)])"
+//        評価点.endEditing(true)
+//        評価点.text = "\(選択肢[pickerView!.selectedRow(inComponent: 0)])"
     }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -164,7 +164,7 @@ class EditEpisode: UIViewController, UIPickerViewDelegate, UIPickerViewDataSourc
     
     @IBAction func 保存(_ sender: Any) {
         
-        if(タイトル.text! == ""){
+        if(タイトル.text! == "" || 日付.text! == "" || 評価点.text! == ""){
             showAlert()
         }else{
         //グラフ画面に戻る
@@ -224,7 +224,7 @@ class EditEpisode: UIViewController, UIPickerViewDelegate, UIPickerViewDataSourc
     }
        
     func showAlert() {
-            let alertController = UIAlertController(title: "保存できません", message: "タイトルを入力してください", preferredStyle: .alert)
+            let alertController = UIAlertController(title: "保存できません", message: "タイトル,日付,評価を入力してください", preferredStyle: .alert)
             alertController.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
             present(alertController, animated: true, completion: nil)
     }

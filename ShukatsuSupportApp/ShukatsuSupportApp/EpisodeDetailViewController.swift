@@ -31,17 +31,6 @@ class EpisodeDetailViewController: UIViewController, UIPickerViewDelegate, UIPic
     @IBOutlet var 改善点: UITextView!
     @IBOutlet var 学んだこと: UITextView!
     
-    @IBOutlet var 更新_タイトル: UITextField!
-    @IBOutlet var 更新_日付: UITextField!
-    @IBOutlet var 更新_評価: UITextField!
-    @IBOutlet var 更新_具体的に何をした: UITextView!
-    @IBOutlet var 更新_目標と困難: UITextView!
-    @IBOutlet var 更新_工夫した点: UITextView!
-    @IBOutlet var 更新_取り組んだ結果: UITextView!
-    @IBOutlet var 更新_活かせた長所: UITextView!
-    @IBOutlet var 更新_改善点: UITextView!
-    @IBOutlet var 更新_学んだこと: UITextView!
-    
 //    遷移元から受け取る値を設置
     var text_タイトル:String = ""
     var text_具体的に何をした: String = ""
@@ -55,7 +44,7 @@ class EpisodeDetailViewController: UIViewController, UIPickerViewDelegate, UIPic
     var text_日付: String = ""
     var id = ""
 
-    var 選択肢: [String] = []
+    var 選択肢: [String] = ["5: 満足","4: 少し満足","3: 普通","2: 少し不満","1: 不満"]
     weak var pickerView: UIPickerView?
     
     var datePicker: UIDatePicker = UIDatePicker()
@@ -94,12 +83,6 @@ class EpisodeDetailViewController: UIViewController, UIPickerViewDelegate, UIPic
         // インプットビュー設定(紐づいているUITextfieldへ代入)
         日付.inputView = datePicker
         日付.inputAccessoryView = toolbar
-        //
-        選択肢.append("5: 満足")
-        選択肢.append("4: 少し満足")
-        選択肢.append("3: 普通")
-        選択肢.append("2: 少し不満")
-        選択肢.append("1: 不満")
         
         let pv = UIPickerView()
         pv.delegate = self
@@ -109,6 +92,16 @@ class EpisodeDetailViewController: UIViewController, UIPickerViewDelegate, UIPic
         評価点.inputAssistantItem.leadingBarButtonGroups = []
         評価点.inputView = pv
         self.pickerView = pv
+        
+//        // ピッカー設定
+//        pickerView!.delegate = self
+//        pickerView!.dataSource = self
+//        pickerView!.showsSelectionIndicator = true
+//        toolbar.setItems([spacelItem, doneItem], animated: true)
+//        
+//        // インプットビュー設定
+//        評価点.inputView = pickerView
+//        評価点.inputAccessoryView = toolbar
 
         let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(self.dismissKeyboard))
         tap.cancelsTouchesInView = false
@@ -151,6 +144,10 @@ class EpisodeDetailViewController: UIViewController, UIPickerViewDelegate, UIPic
         //datePickerで指定した日付が表示される
         DATE = DATE_FORMATTER.string(from: datePicker.date)
         日付.text = DATE
+        
+//        評価点.endEditing(true)
+//        評価点.text = "\(選択肢[self.pickerView!.selectedRow(inComponent: 0)])"
+
     }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -159,7 +156,7 @@ class EpisodeDetailViewController: UIViewController, UIPickerViewDelegate, UIPic
     
     @IBAction func 保存(_ sender: Any) {
         
-        if(タイトル.text! == ""){
+        if(タイトル.text! == "" || 日付.text! == "" || 評価点.text! == ""){
             showAlert()
         }else{
         //グラフ画面に戻る
@@ -216,7 +213,7 @@ class EpisodeDetailViewController: UIViewController, UIPickerViewDelegate, UIPic
     }
        
     func showAlert() {
-            let alertController = UIAlertController(title: "保存できません", message: "タイトルを入力してください", preferredStyle: .alert)
+            let alertController = UIAlertController(title: "保存できません", message: "タイトル,日付,評価を入力してください", preferredStyle: .alert)
             alertController.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
             present(alertController, animated: true, completion: nil)
     }
