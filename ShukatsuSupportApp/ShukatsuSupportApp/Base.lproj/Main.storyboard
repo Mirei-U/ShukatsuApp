@@ -2253,16 +2253,13 @@
                                                 <rect key="frame" x="15" y="50" width="345" height="211"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="文章作成対象" textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="J30-jq-MRO">
-                                                        <rect key="frame" x="0.0" y="0.0" width="345" height="30"/>
-                                                        <constraints>
-                                                            <constraint firstAttribute="height" constant="30" id="FCy-Li-hlo"/>
-                                                        </constraints>
+                                                        <rect key="frame" x="0.0" y="0.0" width="345" height="18"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="ktR-pb-GR6" userLabel="結論">
-                                                        <rect key="frame" x="0.0" y="30" width="345" height="181"/>
+                                                        <rect key="frame" x="0.0" y="18" width="345" height="193"/>
                                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                         <color key="textColor" systemColor="labelColor"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
