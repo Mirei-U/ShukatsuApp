@@ -95,7 +95,7 @@
                             </navigationBar>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" systemColor="tertiarySystemGroupedBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="2w3-hR-Shd" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="AsI-9r-jDM"/>
                             <constraint firstItem="fHE-7X-SmV" firstAttribute="centerX" secondItem="2w3-hR-Shd" secondAttribute="centerX" id="FXH-Fi-D0e"/>
@@ -631,11 +631,10 @@
                                                 </constraints>
                                             </view>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VyF-bA-atT">
-                                                <rect key="frame" x="87.5" y="1925" width="200" height="30"/>
+                                                <rect key="frame" x="87.5" y="1585" width="200" height="31"/>
                                                 <color key="backgroundColor" systemColor="systemRedColor"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="width" constant="200" id="Jgq-aV-Wbe"/>
-                                                    <constraint firstAttribute="height" constant="30" id="lgX-Tr-e5S"/>
+                                                    <constraint firstAttribute="width" constant="200" id="fIG-Cu-T1O"/>
                                                 </constraints>
                                                 <color key="tintColor" systemColor="systemRedColor"/>
                                                 <state key="normal" title="Button"/>
@@ -643,12 +642,16 @@
                                                     <color key="baseForegroundColor" red="1" green="0.99999994039535522" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <color key="baseBackgroundColor" systemColor="systemRedColor"/>
                                                 </buttonConfiguration>
+                                                <connections>
+                                                    <action selector="エピソード削除:" destination="Wah-Ed-WPr" eventType="touchUpInside" id="lt1-YT-xf1"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                         <color key="backgroundColor" red="0.94653230909999997" green="0.84082561730000005" blue="0.70193451640000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <constraints>
                                             <constraint firstItem="piR-88-Weh" firstAttribute="centerX" secondItem="RsK-6t-QsL" secondAttribute="centerX" id="1sb-EQ-e4m"/>
                                             <constraint firstItem="8RM-gb-h5V" firstAttribute="leading" secondItem="RsK-6t-QsL" secondAttribute="leading" constant="15" id="2X9-gZ-guW"/>
+                                            <constraint firstItem="VyF-bA-atT" firstAttribute="top" secondItem="Wma-wj-hRd" secondAttribute="bottom" constant="30" id="2YT-Vx-pfB"/>
                                             <constraint firstItem="Wma-wj-hRd" firstAttribute="centerX" secondItem="RsK-6t-QsL" secondAttribute="centerX" id="3Vn-NU-rVk"/>
                                             <constraint firstAttribute="height" constant="2000" id="5Ai-mn-Htn"/>
                                             <constraint firstAttribute="trailing" secondItem="2EN-oU-0MX" secondAttribute="trailing" constant="15" id="6Q0-X2-pHU"/>
@@ -664,7 +667,6 @@
                                             <constraint firstItem="2EN-oU-0MX" firstAttribute="top" secondItem="RsK-6t-QsL" secondAttribute="top" constant="285" id="J50-wf-hWg"/>
                                             <constraint firstItem="VtT-4h-eS1" firstAttribute="top" secondItem="2EN-oU-0MX" secondAttribute="bottom" constant="18" id="JGh-OP-nhl"/>
                                             <constraint firstItem="aBa-fn-PHH" firstAttribute="top" secondItem="RsK-6t-QsL" secondAttribute="top" constant="648" id="Kor-ed-V9y"/>
-                                            <constraint firstItem="VyF-bA-atT" firstAttribute="centerX" secondItem="RsK-6t-QsL" secondAttribute="centerX" id="MR5-b6-7sF"/>
                                             <constraint firstAttribute="trailing" secondItem="Ku1-XN-Rwn" secondAttribute="trailing" constant="15" id="OuR-Fa-gRc"/>
                                             <constraint firstItem="2EN-oU-0MX" firstAttribute="top" secondItem="zou-xW-zAZ" secondAttribute="bottom" constant="22" id="SCx-eJ-aV5"/>
                                             <constraint firstItem="VtT-4h-eS1" firstAttribute="leading" secondItem="RsK-6t-QsL" secondAttribute="leading" constant="15" id="Tg9-Mr-M94"/>
@@ -682,9 +684,9 @@
                                             <constraint firstAttribute="bottom" secondItem="fjD-at-lez" secondAttribute="bottom" constant="1003" id="i7w-4N-M9w"/>
                                             <constraint firstItem="aBa-fn-PHH" firstAttribute="top" secondItem="VtT-4h-eS1" secondAttribute="bottom" constant="25" id="k5x-CZ-xxo"/>
                                             <constraint firstItem="2EN-oU-0MX" firstAttribute="top" secondItem="8RM-gb-h5V" secondAttribute="bottom" constant="109" id="mGz-tf-jl8"/>
-                                            <constraint firstAttribute="bottom" secondItem="VyF-bA-atT" secondAttribute="bottom" constant="45" id="mil-uT-zBO"/>
                                             <constraint firstAttribute="bottom" secondItem="aBa-fn-PHH" secondAttribute="bottom" constant="1192" id="noU-PU-yfX"/>
                                             <constraint firstAttribute="trailing" secondItem="Wma-wj-hRd" secondAttribute="trailing" constant="15" id="rJE-bm-lIO"/>
+                                            <constraint firstItem="VyF-bA-atT" firstAttribute="centerX" secondItem="RsK-6t-QsL" secondAttribute="centerX" id="raJ-sQ-7zW"/>
                                             <constraint firstAttribute="trailing" secondItem="8RM-gb-h5V" secondAttribute="trailing" constant="15" id="uS8-jS-TVS"/>
                                             <constraint firstAttribute="trailing" secondItem="zou-xW-zAZ" secondAttribute="trailing" constant="15" id="vV5-Rb-eJ2"/>
                                             <constraint firstItem="piR-88-Weh" firstAttribute="leading" secondItem="RsK-6t-QsL" secondAttribute="leading" constant="15" id="vr7-y8-FGP"/>
@@ -2405,7 +2407,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="vyt-vH-j78"/>
+        <segue reference="ky0-YZ-IMp"/>
     </inferredMetricsTieBreakers>
     <resources>
         <systemColor name="labelColor">
@@ -2428,6 +2430,9 @@
         </systemColor>
         <systemColor name="systemYellowColor">
             <color red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="tertiarySystemGroupedBackgroundColor">
+            <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

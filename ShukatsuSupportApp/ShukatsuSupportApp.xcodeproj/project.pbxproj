@@ -160,8 +160,6 @@
 				CBAF3BEC2933E1A700B7A1DE /* User.swift */,
 				CB22626C290C2167003B1F1C /* TOPViewController.swift */,
 				CB226240290C1CAE003B1F1C /* ViewController.swift */,
-				CB81984B29596F4200842613 /* HorizontalPageViewController.swift */,
-				CB1FFCFB2958C16E00873851 /* UpdateEpisodeViewController.swift */,
 				CBAF3BE82933E08800B7A1DE /* GraphViewController.swift */,
 				CB22623C290C1CAE003B1F1C /* AppDelegate.swift */,
 				CB22623E290C1CAE003B1F1C /* SceneDelegate.swift */,
@@ -178,6 +176,8 @@
 				CB226245290C1CB4003B1F1C /* Assets.xcassets */,
 				CB226247290C1CB4003B1F1C /* LaunchScreen.storyboard */,
 				CB22624A290C1CB4003B1F1C /* Info.plist */,
+				CB81984B29596F4200842613 /* HorizontalPageViewController.swift */,
+				CB1FFCFB2958C16E00873851 /* UpdateEpisodeViewController.swift */,
 				CBCD1515294F0C1E00D5C39B /* EpisodeTableViewCell.swift */,
 				CBCD1516294F0C1E00D5C39B /* EpisodeTableViewCell.xib */,
 			);

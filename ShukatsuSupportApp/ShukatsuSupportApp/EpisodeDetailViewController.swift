@@ -17,7 +17,7 @@ var DATE = ""
 protocol EditViewControllerDelegate{
     func editDidFinished(modalText: String?)
 }
-
+///新規エピソード追加画面
 class EpisodeDetailViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource, UITextFieldDelegate, UITextViewDelegate{
 
     @IBOutlet var タイトル : UITextField!
@@ -155,7 +155,6 @@ class EpisodeDetailViewController: UIViewController, UIPickerViewDelegate, UIPic
     }
     
     @IBAction func 保存(_ sender: Any) {
-        
         if(タイトル.text! == "" || 日付.text! == "" || 評価点.text! == ""){
             showAlert()
         }else{
@@ -201,7 +200,6 @@ class EpisodeDetailViewController: UIViewController, UIPickerViewDelegate, UIPic
             print("1点")
             break
         default:
-            user.user評価点 = ""
             print("評価未記入")
         }
         

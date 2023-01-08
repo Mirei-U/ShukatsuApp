@@ -44,7 +44,7 @@ class EditWritingViewController: UIViewController {
     @IBAction func 保存(_ sender: Any) {
 
         //グラフ画面に戻る
-        self.navigationController?.popToViewController(navigationController!.viewControllers[0], animated: true)
+        self.navigationController?.popToViewController(navigationController!.viewControllers[2], animated: true)
         print("⏪戻る")
         do{
             try realm.write {

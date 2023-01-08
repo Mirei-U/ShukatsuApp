@@ -49,7 +49,7 @@ class UpdateEpisodeViewController: UIViewController, UIPickerViewDelegate, UIPic
     var text_日付: String = ""
 
     
-    var 選択肢: [String] = []
+    var 選択肢: [String] = ["5: 満足","4: 少し満足","3: 普通","2: 少し不満","1: 不満"]
     weak var pickerView: UIPickerView?
     
     var datePicker: UIDatePicker = UIDatePicker()
@@ -65,7 +65,7 @@ class UpdateEpisodeViewController: UIViewController, UIPickerViewDelegate, UIPic
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        初期値入力()
+//        初期値入力()
         //日付
         // DateFormatter を使用して書式とロケールを指定する
         DATE_FORMATTER.locale = Locale(identifier: "ja_JP")//日本語にするため
@@ -85,11 +85,11 @@ class UpdateEpisodeViewController: UIViewController, UIPickerViewDelegate, UIPic
         更新_日付.inputView = datePicker
         更新_日付.inputAccessoryView = toolbar
         //
-        選択肢.append("5: 満足")
-        選択肢.append("4: 少し満足")
-        選択肢.append("3: 普通")
-        選択肢.append("2: 少し不満")
-        選択肢.append("1: 不満")
+//        選択肢.append("5: 満足")
+//        選択肢.append("4: 少し満足")
+//        選択肢.append("3: 普通")
+//        選択肢.append("2: 少し不満")
+//        選択肢.append("1: 不満")
         
         let pv = UIPickerView()
         pv.delegate = self
@@ -117,50 +117,7 @@ class UpdateEpisodeViewController: UIViewController, UIPickerViewDelegate, UIPic
         
         print("🟥UpdateEpisodeViewController_更新_タイトル: \(更新_タイトル.text)")
     }
-    func 初期値入力(){
-        //=================
-        //        更新画面
-                更新_タイトル.text! = text_タイトル
-                更新_タイトル.delegate = self
-                self.view.addSubview(更新_タイトル)
-                
-                更新_日付.text! = text_日付
-        //        更新_日付.delegate = self
-        //        self.view.addSubview(更新_日付)
-                
-                更新_評価.text! = text_評価
-        //        更新_評価.delegate = self
-        //        self.view.addSubview(更新_評価)
-                
-                更新_具体的に何をした.text! = text_具体的に何をした
-        //        更新_具体的に何をした.delegate = self
-        //        self.view.addSubview(更新_具体的に何をした)
-                
-        //        更新_目標と困難.text! = text_目標と困難
-        ////        更新_目標と困難.delegate = self
-        ////        self.view.addSubview(更新_目標と困難)
-        //
-        //        更新_工夫した点.text! = text_工夫した点
-        ////        更新_工夫した点.delegate = self
-        ////        self.view.addSubview(更新_工夫した点)
-        //
-        //        更新_取り組んだ結果.text! = text_取り組んだ結果
-        ////        更新_取り組んだ結果.delegate = self
-        ////        self.view.addSubview(更新_取り組んだ結果)
-        //
-        //        更新_活かせた長所.text! = text_活かせた長所
-        ////        更新_活かせた長所.delegate = self
-        ////        self.view.addSubview(更新_活かせた長所)
-        //
-        //        更新_改善点.text! = text_改善点
-        ////        更新_改善点.delegate = self
-        ////        self.view.addSubview(更新_改善点)
-        //
-        //        更新_学んだこと.text! = text_学んだこと
-        //        更新_学んだこと.delegate = self
-        //        self.view.addSubview(更新_学んだこと)
-        //=================
-    }
+
     /*
       UITextFieldが編集された直前に呼ばれる
       */
@@ -210,12 +167,8 @@ class UpdateEpisodeViewController: UIViewController, UIPickerViewDelegate, UIPic
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
-    @IBAction func 更新を保存(_ sender: Any) {
-        
-    }
+
     @IBAction func 保存(_ sender: Any) {
-        
         if(更新_タイトル.text! == ""){
             showAlert()
         }else{
@@ -237,7 +190,6 @@ class UpdateEpisodeViewController: UIViewController, UIPickerViewDelegate, UIPic
         switch 更新_評価.text{
         case "5: 満足":
             user.user評価点 = "5"
-//            graph.評価点追加(評価: 5)
             print("5点")
             break
         case "4: 少し満足":
@@ -261,7 +213,6 @@ class UpdateEpisodeViewController: UIViewController, UIPickerViewDelegate, UIPic
             print("1点")
             break
         default:
-            user.user評価点 = ""
             print("評価未記入")
         }
         

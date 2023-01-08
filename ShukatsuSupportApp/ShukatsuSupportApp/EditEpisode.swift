@@ -18,6 +18,7 @@ import SwiftUI
 //    func editDidFinished(modalText: String?)
 //}
 
+///エピソード更新画面
 class EditEpisode: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource, UITextFieldDelegate, UITextViewDelegate{
 
     @IBOutlet var タイトル : UITextField!
@@ -199,8 +200,8 @@ class EditEpisode: UIViewController, UIPickerViewDelegate, UIPickerViewDataSourc
             print("1点")
             break
         default:
-            user.user評価点 = ""
-            print("評価未記入")
+            user.user評価点 = 評価点.text!
+            print("評価未記入(\(評価点.text)点として保存)")
         }
         do{
             try realm.write {
@@ -216,7 +217,6 @@ class EditEpisode: UIViewController, UIPickerViewDelegate, UIPickerViewDataSourc
                 targetUser!.user活かせた長所 = 活かせた長所.text!
                 targetUser!.user改善点 = 改善点.text!
                 targetUser!.user学んだこと = 学んだこと.text!
-//                print("更新後: \(targetUser!.userなぜなぜ1)")
             }
         }catch {
           print("Error \(error)")

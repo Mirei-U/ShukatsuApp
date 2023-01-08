@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import RealmSwift
 
 class PreviewEpisode: UIViewController, EditViewControllerDelegate {
 
@@ -68,6 +69,10 @@ class PreviewEpisode: UIViewController, EditViewControllerDelegate {
         present(view, animated: true, completion: nil)
     }
     
+    @IBAction func エピソード削除(_ sender: Any) {
+        showAlert()
+        print("削除アラートを呼び出したよ")
+    }
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let DetailVC: EditEpisode = (segue.destination as? EditEpisode)!
         DetailVC.text_タイトル = タイトル.text!
@@ -84,5 +89,47 @@ class PreviewEpisode: UIViewController, EditViewControllerDelegate {
     }
     func editDidFinished(modalText text: String?){
         タイトル.text = text
+    }
+    func showAlert() {
+        print("削除アラートが呼ばれたよ")
+        let alert = UIAlertController(title: "本当に削除しますか？", message: "\(text_タイトル)に関するデータがすべて削除されます。よろしいですか？", preferredStyle: .alert)
+        let delete = UIAlertAction(title: "削除", style: .default, handler: { (action) -> Void in
+            // ① realmインスタンスの生成
+            let realm = try! Realm()
+
+            // ② 削除したいデータを検索する
+            let deleteTarget = realm.object(ofType: User.self, forPrimaryKey: self.id)
+
+            // ③ 部署を更新する
+            do{
+              try realm.write{
+                  realm.delete(deleteTarget!)
+              }
+                
+            }catch {
+              print("Error \(error)")
+            }
+            self.back()
+            self.リマインドAlert()
+            })
+
+        //ここから追加
+        let cancel = UIAlertAction(title: "キャンセル", style: .cancel) { (acrion) in
+            self.dismiss(animated: true, completion: nil)
+        }
+        alert.addAction(cancel)
+        //ここまで追加
+        alert.addAction(delete)
+        
+        self.present(alert, animated: true, completion: nil)
+    }
+    func リマインドAlert() {
+        let alert = UIAlertController(title: "削除完了", message: "データは削除されました", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "OK", style: .default))
+            self.back()
+            self.present(alert, animated: true, completion: nil)
+    }
+    func back(){
+        self.navigationController?.popToViewController(navigationController!.viewControllers[0], animated: true)
     }
 }

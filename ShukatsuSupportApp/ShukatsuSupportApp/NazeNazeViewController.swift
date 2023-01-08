@@ -31,7 +31,7 @@ class NazeNazeViewController: UIViewController,UITableViewDelegate,UITableViewDa
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        NazeNazeLabel.text = "エピソードを下の一覧から選択しよう。\n赤く表示されている部分がおすすめ！"
+        NazeNazeLabel.text = "なぜなぜ分析をしたいエピソードを下の一覧から選択しよう。"
         
         EpisodeTableView.dataSource = self
         EpisodeTableView.delegate = self
@@ -113,8 +113,8 @@ class NazeNazeViewController: UIViewController,UITableViewDelegate,UITableViewDa
             chartDataSet = LineChartDataSet(entries: dataEntries, label: "SampleDataChart")
             chartDataSet.lineWidth = 5.0 // グラフの線の太さを変更
             chartDataSet.mode = .cubicBezier // 滑らかなグラフの曲線にする
-            chartDataSet.colors =  [UIColor(red: 185/255, green: 255/255, blue: 248/255, alpha: 1.0)]//線の色
-            chartDataSet.circleColors = [UIColor(red: 111/255, green: 237/255, blue: 214/255, alpha: 1.0)]//点の色
+            chartDataSet.colors =  [UIColor(red: 255/255, green: 230/255, blue: 154/255, alpha: 1.0)]//線の色
+            chartDataSet.circleColors = [UIColor(red: 255/255, green: 210/255, blue: 76/255, alpha: 1.0)]//点の色
         //背景色
             chartView.gridBackgroundColor = UIColor(red: 0.23, green: 0.24, blue: 0.21, alpha: 1.0)
             chartView.data = LineChartData(dataSet: chartDataSet)
